@@ -25,8 +25,5 @@ public class Application {
 		Pet unnamed = new Pet(userPetName, userPetType);
 		System.out.println(unnamed.getPetName() + " " + unnamed.getPetType());
 
-		
-
-		
 	}
 }
