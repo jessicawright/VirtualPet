@@ -2,12 +2,12 @@ package virtualpet;
 
 public class Pet {
 
-	private String petName;
-	private String petType;
+	private static String petName;
+	private static String petType;
 	private int petHunger;
 
 	public Pet(String petName, String petType, int petHunger) {
-		
+
 		this.petName = petName;
 		this.petType = petType;
 		this.petHunger = petHunger;
@@ -28,5 +28,11 @@ public class Pet {
 	public void feedPet() {
 		petHunger -= 5;
 		return;
+	}
+
+	public void incrementPetHunger() {
+		petHunger += 1;
+		return;
+
 	}
 }
