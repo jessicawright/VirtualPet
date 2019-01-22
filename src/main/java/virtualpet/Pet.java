@@ -3,8 +3,8 @@ package virtualpet;
 public class Pet {
 	
 	//pet attributes
-	private String petName;
-	private String petType;
+	private static String petName;
+	private static String petType;
 
 	
 	
@@ -14,11 +14,11 @@ public class Pet {
 		this.petType = petType;
 	}
 
-	public String getPetName() {
+	public static String getPetName() {
 		return petName;
 	}
 	
-	public String getPetType() {
+	public static String getPetType() {
 		return petType;
 }
 }

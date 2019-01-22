@@ -9,9 +9,16 @@ import fizzbuzz.FizzBuzz;
 public class VirtualPetTest {
 	
 	@Test
-	public void shouldReturnNineAsFizz() {
-		Object userPet;
-		String answer = Application.getAnswerFor(userPet);
-		assertEquals(answer, "Fizz");
+	public void shouldReturnSpotAsSpot() {
+		Pet testDrive = new Pet("Spot", "dog");
+		String answer = testDrive.getPetName();
+		assertEquals("spot", answer);
+	}
+	
+	@Test
+	public void shouldReturnDogAsDog() {
+		Pet testDrive = new Pet("Spot", "x");
+		String answer = testDrive.getPetType();
+		assertEquals("x", answer);
 	}
 }
