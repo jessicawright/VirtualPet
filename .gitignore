@@ -1,5 +1,8 @@
+<<<<<<< HEAD
+=======
 /.gradle/
 =======
+>>>>>>> f2035fdad4a615ddc76b9d7d175644dc741d1ffc
 ######################
 # Project Specific
 ######################
@@ -143,4 +146,8 @@ Desktop.ini
 ######################
 # ESLint
 ######################
+<<<<<<< HEAD
+.eslintcache%
+=======
 .eslintcac
+>>>>>>> f2035fdad4a615ddc76b9d7d175644dc741d1ffc
