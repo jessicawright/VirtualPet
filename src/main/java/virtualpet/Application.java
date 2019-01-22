@@ -33,11 +33,11 @@ public class Application {
 		System.out.println("3. play with pet");
 		System.out.println("4. clean pet");
 		
-		System.out.println("Press 1 to feed");
+		System.out.println("Press 2 to feed");
 		int userMenuChoice = userInput.nextInt();
 		
 		System.out.println(userMenuChoice);
-		if (userMenuChoice == 1) {
+		if (userMenuChoice == 2) {
 			unnamed.feedPet();
 			System.out.println("new hunger status: " + unnamed.getPetHunger());
 		}

@@ -25,8 +25,8 @@ public class Pet {
 		return petHunger;
 	}
 
-	public int feedPet() {
+	public void feedPet() {
 		petHunger -= 5;
-		return petHunger;
+		return;
 	}
 }
