@@ -20,10 +20,26 @@ public class Application {
 		while (!userPetType.equals("dog") && !userPetType.equals("cat") && !userPetType.equals("rabbit")) {
 			System.out.println("Please try again...");
 			userPetType = userInput.nextLine().toLowerCase().trim();
+
+		Pet unnamed = new Pet(userPetName, userPetType, 10); // 0 not hungry at all
+		System.out.println(unnamed.getPetName() + " " + unnamed.getPetType() + " " + unnamed.getPetHunger());
+		// end user pet creation
+		
+		System.out.println("Check Pet Status");
+		
+		System.out.println("what would you like to do?");
+		System.out.println("1. check pet status");
+		System.out.println("2. feed pet");
+		System.out.println("3. play with pet");
+		System.out.println("4. clean pet");
+		
+		System.out.println("Press 1 to feed");
+		int userMenuChoice = userInput.nextInt();
+		
+		System.out.println(userMenuChoice);
+		if (userMenuChoice == 1) {
+			unnamed.feedPet();
+			System.out.println("new hunger status: " + unnamed.getPetHunger());
 		}
-
-		Pet unnamed = new Pet(userPetName, userPetType);
-		System.out.println(unnamed.getPetName() + " " + unnamed.getPetType());
-
 	}
 }

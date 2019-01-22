@@ -7,7 +7,7 @@ public class Pet {
 	private int petHunger;
 
 	public Pet(String petName, String petType, int petHunger) {
-
+		
 		this.petName = petName;
 		this.petType = petType;
 		this.petHunger = petHunger;
@@ -22,6 +22,11 @@ public class Pet {
 	}
 
 	public int getPetHunger() {
+		return petHunger;
+	}
+
+	public int feedPet() {
+		petHunger -= 5;
 		return petHunger;
 	}
 }
