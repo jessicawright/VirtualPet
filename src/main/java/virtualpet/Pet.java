@@ -9,7 +9,7 @@ public class Pet {
 	
 	
 	public Pet(String petName, String petType, int petHunger) {
-
+		
 		this.petName = petName;
 		this.petType = petType;
 		this.petHunger = petHunger;
@@ -23,6 +23,11 @@ public class Pet {
 		return petType;
 }
 	public int getPetHunger() {
+		return petHunger;
+	}
+
+	public int feedPet() {
+		petHunger -= 5;
 		return petHunger;
 	}
 }
