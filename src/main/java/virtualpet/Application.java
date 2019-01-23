@@ -7,7 +7,7 @@ public class Application {
 	public static void main(String[] args) {
 
 		Scanner userInput = new Scanner(System.in);
-		boolean petAlive = true;
+		
 
 		// test user created pet name
 		System.out.println("Enter pet name");
@@ -23,13 +23,14 @@ public class Application {
 			userPetType = userInput.nextLine().toLowerCase().trim();
 		}
 
-		Pet unnamed = new Pet(userPetName, userPetType, 10); // 0 not hungry at all
+		Pet unnamed = new Pet(userPetName, userPetType, 10, true); // 0 not hungry at all
 		System.out.println(unnamed.getPetName() + " " + unnamed.getPetType() + " " + unnamed.getPetHunger());
 		// end user pet creation
 
-		while (petAlive) {
-			unnamed.incrementPetHunger();
+		while (unnamed.petAlive()) {
 
+			unnamed.incrementStatus();
+			
 			System.out.println("what would you like to do?");
 			System.out.println("1. check pet status");
 			System.out.println("2. feed pet");
@@ -43,6 +44,7 @@ public class Application {
 			if (userMenuChoice == 2) {
 				unnamed.feedPet();
 				System.out.println("new hunger status: " + unnamed.getPetHunger());
+			
 			}
 		}
 	}
