@@ -2,10 +2,10 @@ package virtualpet;
 
 public class Pet {
 
-	private static String petName;
-	private static String petType;
+	private String petName;
+	private String petType;
 	private int petHunger;
-	private static boolean petAlive = true;
+	private boolean petAlive = (petHunger < 100);
 
 	public Pet(String petName, String petType, int petHunger, boolean petAlive) {
 
@@ -15,19 +15,20 @@ public class Pet {
 		this.petAlive = true;
 	}
 
-	
-	public static boolean petAlive() {
-		if (petAlive) {
+	// this will be in our while loop printing out our pet died
+	public boolean petAlive() {
+
+		if (petHunger >= 100) {
+			return false;
+		} else
 			return true;
-		}
-		return false;
 	}
-	
-	public static String getPetName() {
+
+	public String getPetName() {
 		return petName;
 	}
 
-	public static String getPetType() {
+	public String getPetType() {
 		return petType;
 	}
 
@@ -35,9 +36,16 @@ public class Pet {
 		return petHunger;
 	}
 
-	public void feedPet() {
-		petHunger -= 5;
-		return;
+	public int feedPet() {
+
+		if (petHunger >= 5) {
+			petHunger -= 5;
+
+			return petHunger;
+		} else {
+			return petHunger;
+		}
+
 	}
 
 	public void incrementStatus() {

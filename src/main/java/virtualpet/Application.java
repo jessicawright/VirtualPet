@@ -47,6 +47,9 @@ public class Application {
 			
 			}
 		}
+		
+		System.out.println("Your pet died");
 	}
+	
 
 }
