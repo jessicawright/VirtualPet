@@ -27,4 +27,26 @@ public class PetTest {
 		assertEquals(answer, 90);
 
 	}
+	
+	@Test
+	public void zeroHungerShouldReturnFalse() {
+		// Arrange
+		Pet underTest = new Pet("", "", 0, true);
+		// Act
+		boolean answer = underTest.petAlive();
+		// Assert
+		assertEquals(answer, false);
+
+	}
+	
+	@Test
+	public void feedWhenHungerEquals0ShouldReturn0() {
+		// Arrange
+		Pet underTest = new Pet("", "", 0, true);
+		// Act
+		int answer = underTest.feedPet();
+		// Assert
+		assertEquals(answer, 0);
+
+	}
 }
