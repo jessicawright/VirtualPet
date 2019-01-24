@@ -18,13 +18,15 @@ public class Application {
 		System.out.println("Please choose a pet type");
 		System.out.println("DOG, CAT, RABBIT");
 		String userPetType = userInput.nextLine().toLowerCase().trim();
+		// trim() method eliminates leading and trailing spaces
+		
 		while (!userPetType.equals("dog") && !userPetType.equals("cat") && !userPetType.equals("rabbit")) {
 			System.out.println("Please try again...");
 			userPetType = userInput.nextLine().toLowerCase().trim();
-		}
+		} 
 
-		Pet unnamed = new Pet(userPetName, userPetType, 10, true); // 0 not hungry at all
-		System.out.println(unnamed.getPetName() + " " + unnamed.getPetType() + " " + unnamed.getPetHunger());
+		Pet unnamed = new Pet(userPetName, userPetType, 10, true,100); // 0 not hungry at all
+		System.out.println(unnamed.getPetName() + " " + unnamed.getPetType() + " " + unnamed.getpetFullness());
 		// end user pet creation
 
 		while (unnamed.petAlive()) {
@@ -43,12 +45,13 @@ public class Application {
 			System.out.println(userMenuChoice);
 			if (userMenuChoice == 2) {
 				unnamed.feedPet();
-				System.out.println("new hunger status: " + unnamed.getPetHunger());
+				System.out.println("new hunger status: " + unnamed.getPetFullness());
 			
 			}
 		}
 		
 		System.out.println("Your pet died");
+		System.out.println("Good job, your pet is clean!");
 	}
 	
 
