@@ -2,47 +2,89 @@ package virtualpet;
 
 public class Pet {
 
-	private static String petName;
-	private static String petType;
-	private int petHunger;
-	private static boolean petAlive = true;
+	private String petName;
+	private String petType;
+	private int petFullness;
+	private boolean petAlive;
+	private int petCleanliness;
+	private int petHappiness; 
+	private int petEnergy; 
+	
+	
 
-	public Pet(String petName, String petType, int petHunger, boolean petAlive) {
+	public Pet(String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy) {
 
 		this.petName = petName;
 		this.petType = petType;
-		this.petHunger = petHunger;
+		this.petFullness = petFullness;
 		this.petAlive = true;
+		this.petCleanliness = petCleanliness;
+		this.petHappiness = petHappiness; 
+		this.petEnergy  = petEnergy; 
 	}
 
-	
-	public static boolean petAlive() {
-		if (petAlive) {
+	// this will be in our while loop printing out our pet died
+	public boolean petAlive() {
+
+		if ((petFullness <= 0) || (petFullness >= 120)) {
+			return false;
+		} else
 			return true;
-		}
-		return false;
 	}
-	
-	public static String getPetName() {
+
+	public String getPetName() {
 		return petName;
 	}
 
-	public static String getPetType() {
+	public String getPetType() {
 		return petType;
 	}
 
-	public int getPetHunger() {
-		return petHunger;
-	}
+	public int feedPet() {
+		petFullness += 25;
+		return petFullness;
 
-	public void feedPet() {
-		petHunger -= 5;
-		return;
 	}
 
 	public void incrementStatus() {
-		petHunger += 1;
+		petFullness -= 5;
 		return;
 
 	}
+
+	public int getPetFullness() {
+		return petFullness;
+	}
+
+	public int getPetCleanliness() {
+		return petCleanliness;
+	}
+
+	public int cleanPet() {
+		petCleanliness += 50;
+		return petCleanliness;
+	}
+	
+	public int getPetHappiness() {
+		return petHappiness;
+	}
+	
+	public int playPet() {
+		petHappiness += 25;
+		return petHappiness;
+
+	}
+	
+	public int getPetEnergy() {
+		return petEnergy;
+	}
+	
+	public int sleepPet() {
+		petEnergy += 25; 
+		petFullness -= 10;
+		return petEnergy;
+
+	}
+
 }
+
