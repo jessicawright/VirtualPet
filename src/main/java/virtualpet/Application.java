@@ -3,25 +3,27 @@ package virtualpet;
 import java.util.Scanner;
 
 public class Application {
+	
+	public static Scanner userInput = new Scanner(System.in);
+	public static PetShelter virtualPetShelter = new PetShelter();
 
 	public static void main(String[] args) {
 
-		Scanner userInput = new Scanner(System.in);
 
-		Pet unnamed = createPet(userInput);
+		Pet virtualPet = createPet(userInput);
 
-		while (unnamed.petAlive()) {
+		while (virtualPet.petAlive()) {
 
-			unnamed.incrementStatus();
+			virtualPet.incrementStatus();
 
-
-			
 			System.out.println("----------");
+			
+			System.out.println(virtualPetShelter.getPetsLength());
 			System.out.println("Pet Status:");
-			System.out.println("Fullness = " + unnamed.getPetFullness());
-			System.out.println("Cleanliness = " + unnamed.getPetCleanliness());
-			System.out.println("Energy = " + unnamed.getPetEnergy());
-			System.out.println("Happiness = " + unnamed.getPetHappiness()); // create method petStatus?
+			System.out.println("Fullness = " + virtualPet.getPetFullness());
+			System.out.println("Cleanliness = " + virtualPet.getPetCleanliness());
+			System.out.println("Energy = " + virtualPet.getPetEnergy());
+			System.out.println("Happiness = " + virtualPet.getPetHappiness()); // create method petStatus?
 			System.out.println("----------");
 			System.out.println();
 			System.out.println("1. feed pet.");
@@ -37,13 +39,13 @@ public class Application {
 			switch (userMenuChoice) {
 
 			case "1":
-				unnamed.feedPet();
+				virtualPet.feedPet();
 				break;
 			case "2":
-				unnamed.playPet();
+				virtualPet.playPet();
 				break;
 			case "3":
-				unnamed.cleanPet();
+				virtualPet.cleanPet();
 				break;
 			case "4":
 				createPet(userInput);
@@ -51,14 +53,14 @@ public class Application {
 
 			case "5":
 				System.out.println("not available yet");
-				}
 			}
-
-			System.out.println("Your pet died.");
-			
 		}
 
-	//method for pet creation
+		System.out.println("Your pet died.");
+
+	}
+
+	// method for pet creation
 	private static Pet createPet(Scanner userInput) {
 		// test user created pet name
 		System.out.println("Hello! Please enter a name for your new pet.");
@@ -76,12 +78,13 @@ public class Application {
 			userPetType = userInput.nextLine().toLowerCase().trim();
 		}
 
-		Pet unnamed = new Pet(userPetName, userPetType, 50, true, 50, 50, 50); // 0 not hungry at all
+		Pet virtualPet = new Pet(userPetName, userPetType, 50, true, 50, 50, 50); // 0 not hungry at all
+		virtualPetShelter.addPet(virtualPet);
+		
 		System.out.println();
-		System.out.println("Say hello to " + unnamed.getPetName() + ", your new " + unnamed.getPetType() + ".");
+		System.out.println("Say hello to " + virtualPet.getPetName() + ", your new " + virtualPet.getPetType() + ".");
 		System.out.println("----------");
 		// end user pet creation
-		return unnamed;
+		return virtualPet;
 	}
-	}
-
+}
