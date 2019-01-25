@@ -9,7 +9,7 @@ public class PetTest {
 	@Test
 	public void hungerShouldReturn100() {
 		// Arrange
-		Pet underTest = new Pet("", "", 100, true, 100);
+		Pet underTest = new Pet("", "", 100, true, 100,100,100);
 		// Act
 		int answer = underTest.getPetFullness();
 		// Assert 
@@ -20,7 +20,7 @@ public class PetTest {
 	@Test
 	public void hungerShouldReturn125() {
 		// Arrange
-		Pet underTest = new Pet("", "",100, true, 100);
+		Pet underTest = new Pet("", "",100, true, 100,100,100);
 		// Act
 		int answer = underTest.feedPet();
 		// Assert
@@ -30,7 +30,7 @@ public class PetTest {
 	@Test
 	public void oneHundredHungerShouldReturnTrue() {
 			// Arrange
-			Pet underTest = new Pet("", "", 100, true, 100);
+			Pet underTest = new Pet("", "", 100, true, 100,100,100);
 			// Act
 			boolean answer = underTest.petAlive();
 			// Assert
@@ -40,7 +40,7 @@ public class PetTest {
 	@Test
 	public void petCleanlinessRetuns100() {
 		// Arrange
-		Pet underTest = new Pet("", "", 100, true, 100);
+		Pet underTest = new Pet("", "", 100, true, 100,100,100);
 		// Act
 		int answer = underTest.getPetCleanliness();
 		// Assert
@@ -51,7 +51,7 @@ public class PetTest {
 	@Test
 	public void cleanPetShouldRetuns100() {
 		// Arrange
-		Pet underTest = new Pet("", "", 100, true, 50);
+		Pet underTest = new Pet("", "", 100, true, 50,100,100);
 		// Act
 		int answer = underTest.cleanPet();
 		// Assert
@@ -61,7 +61,7 @@ public class PetTest {
 	@Test
 	public void uncleanPetShouldRetuns0() {
 		// Arrange
-		Pet underTest = new Pet("", "", 100, true, 0);
+		Pet underTest = new Pet("", "", 100, true, 0,100,100);
 		// Act
 		int answer = underTest.cleanPet();
 		// Assert
