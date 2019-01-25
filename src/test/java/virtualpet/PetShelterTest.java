@@ -14,7 +14,7 @@ public class PetShelterTest {
 
 		// arrange
 
-		// actg
+		// act
 		underTestShelter.addPet(underTestPet);
 		int answer = underTestShelter.getPetsLength();
 
