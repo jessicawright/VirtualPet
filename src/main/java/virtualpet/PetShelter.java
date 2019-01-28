@@ -56,6 +56,18 @@ public class PetShelter {
 			pet.incrementStatus();
 		}
 	}
+	
+//	public void allPetStatus() {
+//		for (Pet pet : pets.values()) {
+//			System.out.println("The happiness level is " + pet.getPetHappiness);
+//		}
+//	System.out.println("Pet Status:");
+//	System.out.println("Fullness = " + virtualPetShelter.getPetFullness());
+//	System.out.println("Cleanliness = " + virtualPet.getPetCleanliness());
+//	System.out.println("Energy = " + virtualPet.getPetEnergy());
+//	System.out.println("Happiness = " + virtualPet.getPetHappiness()); // create method petStatus?
+//	System.out.println("----------");
+//	}
 		
 	
 

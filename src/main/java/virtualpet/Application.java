@@ -35,23 +35,16 @@ public class Application {
 
 		while (!userMenuChoice.equals("-1")) {//(virtualPet.petAlive()) {
 
-
-			System.out.println("----------");
 			
-			System.out.println(virtualPetShelter.getPetsLength());
-//			System.out.println("Pet Status:");
-//			System.out.println("Fullness = " + virtualPetShelter.getPetFullness());
-//			System.out.println("Cleanliness = " + virtualPet.getPetCleanliness());
-//			System.out.println("Energy = " + virtualPet.getPetEnergy());
-//			System.out.println("Happiness = " + virtualPet.getPetHappiness()); // create method petStatus?
-//			System.out.println("----------");
-			System.out.println();
+//			System.out.println(virtualPetShelter.getPetsLength());
+
 			System.out.println("1. feed all pets");
 			System.out.println("2. play with pets");
 			System.out.println("3. clean pets");
 			System.out.println("4. Accept new pet");
 			System.out.println("5. Let pets sleep");
 			System.out.println("6. Select a pet");
+			System.out.println("7. Check the status of the pets");
 			System.out.println();
 			System.out.println("what would you like to do?");
 			String userMenuChoice1 = userInput.nextLine();
@@ -83,7 +76,7 @@ public class Application {
 				while (!userPetType.equals("dog") && !userPetType.equals("cat") && !userPetType.equals("rabbit")) {
 					System.out.println("Please try again...");
 					userPetType = userInput.nextLine().toLowerCase().trim();
-				}
+					}
 
 				Pet virtualPet1 = new Pet(userPetName, userPetType, 50, true, 50, 50, 50); // 0 not hungry at all
 				virtualPetShelter.addPet(virtualPet1);
@@ -99,6 +92,8 @@ public class Application {
 			case "6":
 				System.out.println("not available yet");
 				break;
+			case "7":
+//				virtualPetShelter.allPetStatus(); need to finish method in shelter
 			}
 			
 			virtualPetShelter.incrementAllPets();
