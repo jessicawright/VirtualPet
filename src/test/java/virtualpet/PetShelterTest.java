@@ -7,7 +7,8 @@ import org.junit.Test;
 public class PetShelterTest {
 
 	PetShelter underTestShelter = new PetShelter();
-	Pet underTestPet = new Pet("spotty", "", 100, true, 0, 0, 0);
+	Pet underTestPet = new Pet("spotty", "", 50, true, 0, 0, 0);
+	Pet underTestPet2 = new Pet("saddy", "", 25, true, 0, 0, 0);
 
 	@Test
 	public void shouldAddPetToShelter() {
@@ -22,7 +23,7 @@ public class PetShelterTest {
 		assertEquals(answer, 1);
 
 	}
-	
+
 	@Test
 	public void shouldAddSecondPetToShelter() {
 
@@ -37,7 +38,7 @@ public class PetShelterTest {
 		assertEquals(answer, 2);
 
 	}
-	
+
 	@Test
 	public void shouldRemovePetFromShelter() {
 
@@ -49,6 +50,29 @@ public class PetShelterTest {
 
 		// assert
 		assertEquals(answer, 0);
+
+	}
+
+	@Test
+	public void shouldFeedallPets() {
+
+		// arrange
+
+		// act
+		underTestShelter.addPet(underTestPet);
+		underTestShelter.addPet(underTestPet2);
+		
+		System.out.println(underTestPet.getPetFullness());
+		System.out.println(underTestPet2.getPetFullness());
+		
+		underTestShelter.feedAllPets();
+		
+		int answer = underTestPet.getPetFullness();
+		int answer2 = underTestPet2.getPetFullness();
+		
+		// assert
+		assertEquals(answer, 75);
+		assertEquals(answer2, 50);
 
 	}
 }

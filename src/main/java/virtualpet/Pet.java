@@ -8,7 +8,8 @@ public class Pet {
 	private boolean petAlive;
 	private int petCleanliness;
 	private int petHappiness; 
-	private int petEnergy; 
+	private int petEnergy;
+	
 	
 	
 
@@ -31,6 +32,12 @@ public class Pet {
 		} else
 			return true;
 	}
+//	public String getPetAlive() {
+//		if (petAlive ) {
+//			return "alive";
+//		} else
+//			return "dead";
+//	}
 
 	public String getPetName() {
 		return petName;
@@ -42,6 +49,9 @@ public class Pet {
 
 	public int feedPet() {
 		petFullness += 25;
+//		if (petFullness > 120 || petFullness < 0) {
+//			petAlive = false; 
+//		}
 		return petFullness;
 
 	}

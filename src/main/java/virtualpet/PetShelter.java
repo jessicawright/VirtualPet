@@ -1,5 +1,7 @@
 package virtualpet;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.HashMap;
 
 public class PetShelter {
@@ -22,9 +24,14 @@ public class PetShelter {
 		return pets.size();
 	}
 
-	public void removePet(Pet underTestPet) {
-		pets.remove(underTestPet.getPetName(), underTestPet);
+	public void removePet() { 
+		for (Pet pet : pets.values()) {
+			if (pet.petAlive() == false) {
+				pets.remove(pet.getPetName());
+			
+		}
 
+	}
 	}
 	
 	public void feedAllPets() {
@@ -57,20 +64,26 @@ public class PetShelter {
 		}
 	}
 	
-//	public void allPetStatus() {
-//		for (Pet pet : pets.values()) {
-//			System.out.println("The happiness level is " + pet.getPetHappiness);
-//		}
-//	System.out.println("Pet Status:");
-//	System.out.println("Fullness = " + virtualPetShelter.getPetFullness());
-//	System.out.println("Cleanliness = " + virtualPet.getPetCleanliness());
-//	System.out.println("Energy = " + virtualPet.getPetEnergy());
-//	System.out.println("Happiness = " + virtualPet.getPetHappiness()); // create method petStatus?
-//	System.out.println("----------");
-//	}
+	public void allPetStatus() {
+		for (Pet pet : pets.values()) {
+			if (pet.petAlive()) {
+				System.out.println("Alive");
+			} else {
+				System.out.println("Dead");
+			}
+			System.out.println("Pet Status:");
+			System.out.println("For pet " + pet.getPetName());
+			System.out.println("Fullness = " + pet.getPetFullness());
+			System.out.println("Cleanliness = " + pet.getPetCleanliness());
+			System.out.println("Energy = " + pet.getPetEnergy());
+			System.out.println("Happiness = " + pet.getPetHappiness()); // create method petStatus?
+			System.out.println("----------");
+		}
+		
 		
 	
 
 	}
-
 }
+
+
