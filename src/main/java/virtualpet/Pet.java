@@ -48,6 +48,7 @@ public class Pet {
 
 	public void incrementStatus() {
 		petFullness -= 5;
+		petCleanliness -=5;
 		return;
 
 	}
@@ -71,6 +72,9 @@ public class Pet {
 	
 	public int playPet() {
 		petHappiness += 25;
+		petCleanliness -= 20;
+		petEnergy -= 10;
+		petFullness -= 10;
 		return petHappiness;
 
 	}
@@ -80,6 +84,7 @@ public class Pet {
 	}
 	
 	public int sleepPet() {
+		System.out.println("You pet slept for 2 hours");
 		petEnergy += 25; 
 		petFullness -= 10;
 		return petEnergy;

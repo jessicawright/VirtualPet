@@ -49,27 +49,43 @@ public class PetTest {
 				
 	
 	@Test
-	public void cleanPetShouldRetuns100() {
-		// Arrange
-		Pet underTest = new Pet("", "", 100, true, 50,100,100);
-		// Act
-		int answer = underTest.cleanPet();
-		// Assert
-		assertEquals(answer, 100);
-	}
-	
-	@Test
 	public void uncleanPetShouldRetuns0() {
 		// Arrange
-		Pet underTest = new Pet("", "", 100, true, 0,100,100);
+		Pet underTest = new Pet("", "", 100, true, 0, 100, 100);
 		// Act
 		int answer = underTest.cleanPet();
 		// Assert
 		assertEquals(answer, 50);
-	}	
-		
-
+	}
 	
+	@Test
+	public void shouldReturnEnergyOf50AfterSleeping() {
+		// Arrange
+		Pet underTest = new Pet("", "", 100, true, 0, 100, 25);
+		// Act
+		int answer = underTest.sleepPet();
+		// Assert
+		assertEquals(answer, 50);
+	}
+	
+	@Test
+	public void shouldReturnEnergyOf50AfterPlaying() {
+		// Arrange
+		Pet underTest = new Pet("", "", 100, true, 0, 100, 60);
+		// Act
+		int answer = underTest.playPet();
+		// Assert
+		assertEquals(answer, 50);
+	}
+	
+	@Test
+	public void shouldReturnHappinessOf50AfterPlaying() {
+		// Arrange
+		Pet underTest = new Pet("", "", 100, true, 0, 25, 60);
+		// Act
+		int answer = underTest.playPet();
+		// Assert
+		assertEquals(answer, 50);
+	}
+
 }
-
-
