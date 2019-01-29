@@ -1,10 +1,25 @@
 package virtualpet;
 
-public class Organic {
+public class Organic extends Pet {
+	private int petHappiness; 
+	private int petFullness;
+	public Organic(String petName, String petType, int petFullness, boolean petAlive, int petCleanliness,
+			int petHappiness, int petEnergy) {
+		
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		super(petName, petType, petAlive, petCleanliness, petEnergy);
+		
+		this.petFullness = petFullness;
+		this.petHappiness = petHappiness; 
+		
 	}
+	public int getPetHappiness() {
+		return petHappiness;
+	}
+	
+	public int getPetFullness() {
+		return petFullness;
+	}
+
 
 }
