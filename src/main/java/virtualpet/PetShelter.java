@@ -1,5 +1,6 @@
 package virtualpet;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 public class PetShelter {
@@ -18,25 +19,28 @@ public class PetShelter {
 	public int getPetsLength() {
 		return pets.size();
 	}
+	
+	public Collection<Pet> getPets() {
+		return pets.values();
+	}
 
-	public void removeDeadPet() {
+	public void adoptPetOut(String petName) {
+		pets.remove(petName);
+		System.out.println(petName + " found a new home.");
+	}
+	
+	public void removeDeadPets() {
 		for (Pet pet : pets.values()) {
 			if (pet.getPetAlive() == false) {
-				pets.remove(pet.getPetName());
-				System.out.println(pet.getPetName() + " died.");
+			pets.remove(pet.getPetName());
 			}
 		}
 	}
 
-	public void adoptPetOut(Pet petToAdopt) {
-		pets.remove(petToAdopt);
-		System.out.println(petToAdopt.getPetName() + " found a new home.");
-	}
 
 	public void feedAllPets() {
 		for (Pet pet : pets.values()) {
 			pet.feedPet();
-			return;
 		}
 	}
 
@@ -66,7 +70,7 @@ public class PetShelter {
 
 	public void allPetStatus() {
 		for (Pet pet : pets.values()) {
-			if (pet.getPetAlive()) {
+			if (((Organic) pet).getPetAlive() && ((Robotic) pet).getPetAlive()) {
 				System.out.println("Alive");
 			} else {
 				System.out.println("Dead");

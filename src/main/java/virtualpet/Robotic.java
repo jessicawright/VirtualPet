@@ -4,11 +4,13 @@ public class Robotic extends Pet {
 
 	private int petBatteryLife;
 	private int petOilLevel;
+	private boolean petAlive;
 
-	public Robotic(String petName, String petType, int petCleanliness, int petBatteryLife, int oilLevel) {
-		super(petName, petType, petCleanliness);
+	public Robotic(String petName, String petType, int petCleanliness, boolean petAlive, int petBatteryLife, int oilLevel) {
+		super(petName, petType, petCleanliness, petAlive);
 		this.petBatteryLife = petBatteryLife;
 		this.petOilLevel = oilLevel;
+		this.petAlive = true;
 	}
 
 	public int getBatteryLife() {
@@ -17,6 +19,10 @@ public class Robotic extends Pet {
 	
 	public int getOilLevel() {
 		return petOilLevel;
+	}
+	
+	public boolean getPetAlive() {
+		return petAlive;
 	}
 
 	public void incrementStatus() {
@@ -43,5 +49,11 @@ public class Robotic extends Pet {
 		petOilLevel += 50;
 		return;
 	}
-
+	
+	public void die() {
+		if (petBatteryLife <= 0 || petOilLevel <= 0) {
+			petAlive = false;
+		}
+	}
+	
 }

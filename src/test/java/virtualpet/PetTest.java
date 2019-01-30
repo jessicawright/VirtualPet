@@ -6,8 +6,8 @@ import org.junit.Test;
 
 public class PetTest {
 
-	Pet underTestPet = new Pet("Spot", "cat", 50);
-	Pet underTestPet2 = new Pet("Shadow", "dog", 90);
+	Pet underTestPet = new Pet("Spot", "cat", 50, true);
+	Pet underTestPet2 = new Pet("Shadow", "dog", 90, true);
 
 	@Test
 	public void aliveShouldReturnTrue() {
@@ -31,21 +31,21 @@ public class PetTest {
 
 	@Test
 	public void energyShouldReturnThirty() {
-		int answer = underTestPet.getPetEnergy();
+		int answer = ((Organic) underTestPet).getPetEnergy();
 		assertEquals(answer, 30);
 	}
 
 	@Test
 	public void energyShouldReturnFiftyFiveAfterSleeping() {
 		underTestPet.sleepPet();
-		int answer = underTestPet.getPetEnergy();
+		int answer = ((Organic) underTestPet).getPetEnergy();
 		assertEquals(answer, 55);
 	}
 
 	@Test
 	public void playingShouldRetunEnergyOfTwenty() {
 		underTestPet.playPet();
-		int afterEnergy = underTestPet.getPetEnergy();
+		int afterEnergy = ((Organic) underTestPet).getPetEnergy();
 		assertEquals(afterEnergy, 20);
 	}
 

@@ -4,15 +4,15 @@ public class Pet {
 
 	private String petName;
 	private String petType;
-	private boolean petAlive;
 	private int petCleanliness;
+	private boolean petAlive;
 
-	public Pet(String petName, String petType, int petCleanliness) {
+	public Pet(String petName, String petType, int petCleanliness, boolean petAlive) {
 
 		this.petName = petName;
 		this.petType = petType;
-		this.petAlive = true;
 		this.petCleanliness = petCleanliness;
+		this.petAlive = true;
 	}
 
 	public String getPetName() {
@@ -23,12 +23,12 @@ public class Pet {
 		return petType;
 	}
 
-	public boolean getPetAlive() {
-		return petAlive;
-	}
-
 	public int getPetCleanliness() {
 		return petCleanliness;
+	}
+	
+	public boolean getPetAlive() {
+		return petAlive;
 	}
 
 	public void incrementStatus() {
@@ -57,5 +57,10 @@ public class Pet {
 	public void feedPet() {
 		return;
 	}
-
+	
+	public void die() {
+		return;
+	}
+			
 }
+
