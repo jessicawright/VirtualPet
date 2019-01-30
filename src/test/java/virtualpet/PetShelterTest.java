@@ -7,7 +7,7 @@ import org.junit.Test;
 public class PetShelterTest {
 
 	PetShelter underTestShelter = new PetShelter();
-	Pet underTestPet = new Pet("spotty", "", 50, true, 0, 0, 0);
+	Pet underTestPet = new Pet("spotty", "", 50, false, 0, 0, 0);
 	Pet underTestPet2 = new Pet("saddy", "", 25, true, 0, 0, 0);
 
 	@Test
@@ -41,14 +41,9 @@ public class PetShelterTest {
 
 	@Test
 	public void shouldRemovePetFromShelter() {
-
-		// arrange
-
-		// act
-		underTestShelter.removePet(underTestPet);
+		underTestShelter.addPet(underTestPet);
+		underTestShelter.adoptPet(underTestPet);
 		int answer = underTestShelter.getPetsLength();
-
-		// assert
 		assertEquals(answer, 0);
 
 	}

@@ -9,53 +9,62 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-//		String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy
-		Pet pet1 = new Pet("Spot", "dog", 115, false, 80, 75, 75);
-		Pet pet2 = new Pet("Happy", "cat", 50, false, 40, 60, 5);
-		Pet pet3 = new Pet("Saddy", "rabbit", 25, false, 50, 50, 50);
+//		String petName, String petType, boolean petAlive, int petCleanliness, int petEnergy
+		Pet pet1 = new Pet("Spot", "dog", false, 80, 75);
+		Pet pet2 = new Pet("Happy", "cat", false, 40, 60);
+		Pet pet3 = new Pet("Saddy", "rabbit", false, 50, 50);
 
 		virtualPetShelter.addPet(pet1);
 		virtualPetShelter.addPet(pet2);
 		virtualPetShelter.addPet(pet3);
-<<<<<<< HEAD
-//		System.out.println(virtualPetShelter.getPetsLength());
-=======
-		System.out.println("Welcome! The curretnt pet population is: " + virtualPetShelter.getPetsLength());
->>>>>>> 3783f2d59a321c0b91092b6cf274a63064952e38
 
 
 //		Pet virtualPet = createPet(userInput);
-		System.out.println("*******************");
-		System.out.println("1. feed pet.");
-		System.out.println("2. play with pet");
-		System.out.println("3. clean pet");
-		System.out.println("4. Accept new pet");
-		System.out.println("5. Let pet sleep");
-		System.out.println("6. Select a pet");
-		System.out.println();
-		System.out.println("what would you like to do?");
-		String userMenuChoice = userInput.nextLine();
+//		System.out.println("*******************");
+//		System.out.println("1. feed pet.");
+//		System.out.println("2. play with pet");
+//		System.out.println("3. clean pet");
+//		System.out.println("4. Accept new pet");
+//		System.out.println("5. Let pet sleep");
+//		System.out.println("6. Select a pet");
+//		System.out.println();
+//		System.out.println("what would you like to do?");
+//		String userMenuChoice = userInput.nextLine();
 		
-
+		System.out.println("Welcome to the ABC Pet Shelter!");
+		System.out.println("Here are all the pets currently here:");
+		virtualPetShelter.allPetStatus();
+		
+		System.out.println("what would you like to do?");
+		System.out.println("--------------------------");
+		System.out.println("1. feed all pets");
+		System.out.println("2. play with pets");
+		System.out.println("3. clean pets");
+		System.out.println("4. Accept new pet");
+		System.out.println("5. Let pets sleep");
+		System.out.println("6. Select a pet");
+		System.out.println("7. Check the status of the pets");
+		System.out.println("8. Adopt out a pet");
+		String userMenuChoice = userInput.nextLine();
 
 		while (!userMenuChoice.equals("-1")) {//(virtualPet.petAlive()) {
-
 			
-			System.out.println(virtualPetShelter.getPetsLength());
+//			System.out.println(virtualPetShelter.getPetsLength());
 
-			System.out.println("1. feed all pets");
-			System.out.println("2. play with pets");
-			System.out.println("3. clean pets");
-			System.out.println("4. Accept new pet");
-			System.out.println("5. Let pets sleep");
-			System.out.println("6. Select a pet");
-			System.out.println("7. Check the status of the pets");
-			System.out.println();
-			System.out.println("what would you like to do?");
-			String userMenuChoice1 = userInput.nextLine();
-
-			System.out.println(userMenuChoice1);
-			switch (userMenuChoice1) {
+//			System.out.println("1. feed all pets");
+//			System.out.println("2. play with pets");
+//			System.out.println("3. clean pets");
+//			System.out.println("4. Accept new pet");
+//			System.out.println("5. Let pets sleep");
+//			System.out.println("6. Select a pet");
+//			System.out.println("7. Check the status of the pets");
+//			System.out.println("8. Adopt out a pet");
+//			System.out.println();
+//			System.out.println("what would you like to do?");
+//			String userMenuChoice1 = userInput.nextLine();
+//
+//			System.out.println(userMenuChoice1);
+			switch (userMenuChoice) {
 
 			case "1":
 				virtualPetShelter.feedAllPets();
@@ -83,7 +92,7 @@ public class Application {
 					userPetType = userInput.nextLine().toLowerCase().trim();
 					}
 
-				Pet virtualPet1 = new Pet(userPetName, userPetType, 50, true, 50, 50, 50); // 0 not hungry at all
+				Pet virtualPet1 = new Pet(userPetName, userPetType, true, 50, 50); // 0 not hungry at all
 				virtualPetShelter.addPet(virtualPet1);
 				
 				System.out.println();
@@ -99,10 +108,15 @@ public class Application {
 				break;
 			case "7":
 				virtualPetShelter.allPetStatus(); 
+			case "8":
+				System.out.println("Please select a pet to adopt by entering their name: ");
+				String petToAdopt = userInput.nextLine();
+				Pet adoptedPet = virtualPetShelter.getPet(petToAdopt);
+				virtualPetShelter.adoptPet(adoptedPet);
 			}
 			
 			virtualPetShelter.incrementAllPets();
-			virtualPetShelter.removePet();
+			virtualPetShelter.removeDeadPet();
 		}
 
 		System.out.println("Your pet died.");
