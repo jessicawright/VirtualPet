@@ -1,7 +1,5 @@
 package virtualpet;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.HashMap;
 
 public class PetShelter {

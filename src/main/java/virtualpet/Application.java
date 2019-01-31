@@ -10,9 +10,9 @@ public class Application {
 	public static void main(String[] args) {
 		
 //		String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy
-		Pet pet1 = new Pet("Spot", "dog", 115, false, 80, 75, 75);
-		Pet pet2 = new Pet("Happy", "cat", 50, false, 40, 60, 5);
-		Pet pet3 = new Pet("Saddy", "rabbit", 25, false, 50, 50, 50);
+		Pet pet1 = new Pet("Spot", "dog", 115, true, 80, 75, 75);
+		Pet pet2 = new Pet("Happy", "cat", 50, true, 40, 60, 5);
+		Pet pet3 = new Pet("Saddy", "rabbit", 25, true, 50, 50, 50);
 
 		virtualPetShelter.addPet(pet1);
 		virtualPetShelter.addPet(pet2);

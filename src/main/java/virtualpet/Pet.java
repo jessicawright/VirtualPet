@@ -18,7 +18,7 @@ public class Pet {
 		this.petName = petName;
 		this.petType = petType;
 		this.petFullness = petFullness;
-		this.petAlive = true;
+		this.petAlive();
 		this.petCleanliness = petCleanliness;
 		this.petHappiness = petHappiness; 
 		this.petEnergy  = petEnergy; 
@@ -99,6 +99,14 @@ public class Pet {
 		petFullness -= 10;
 		return petEnergy;
 
+	}
+
+	public boolean isPetAlive() {
+		return petAlive;
+	}
+
+	public void setPetAlive(boolean petAlive) {
+		this.petAlive = petAlive;
 	}
 
 }
