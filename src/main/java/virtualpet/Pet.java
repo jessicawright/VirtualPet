@@ -4,40 +4,16 @@ public class Pet {
 
 	private String petName;
 	private String petType;
-	private int petFullness;
-	private boolean petAlive;
 	private int petCleanliness;
-	private int petHappiness; 
 	private int petEnergy;
 	
-	
-	
-
-	public Pet(String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy) {
+	public Pet(String petName, String petType, int petCleanliness, int petEnergy) {
 
 		this.petName = petName;
 		this.petType = petType;
-		this.petFullness = petFullness;
-		this.petAlive = true;
 		this.petCleanliness = petCleanliness;
-		this.petHappiness = petHappiness; 
-		this.petEnergy  = petEnergy; 
+		this.petEnergy = petEnergy;
 	}
-
-	// this will be in our while loop printing out our pet died
-	public boolean petAlive() {
-
-		if ((petFullness <= 0) || (petFullness >= 120)) {
-			return false;
-		} else
-			return true;
-	}
-//	public String getPetAlive() {
-//		if (petAlive ) {
-//			return "alive";
-//		} else
-//			return "dead";
-//	}
 
 	public String getPetName() {
 		return petName;
@@ -47,59 +23,48 @@ public class Pet {
 		return petType;
 	}
 
-	public int feedPet() {
-		petFullness += 25;
-//		if (petFullness > 120 || petFullness < 0) {
-//			petAlive = false; 
-//		}
-		return petFullness;
-
-	}
-
 	public void incrementStatus() {
-		petFullness -= 5;
-		petCleanliness -=5;
+		// petFullness -= 5;
+		petCleanliness -= 5;
 		return;
 
-	}
-
-	public int getPetFullness() {
-		return petFullness;
 	}
 
 	public int getPetCleanliness() {
 		return petCleanliness;
 	}
 
-	public int cleanPet() {
+	public void cleanPet() {
 		petCleanliness += 50;
-		return petCleanliness;
+
+		return;
 	}
-	
-	public int getPetHappiness() {
-		return petHappiness;
-	}
-	
-	public int playPet() {
-		petHappiness += 25;
+
+	public void playPet() {
+		
 		petCleanliness -= 20;
 		petEnergy -= 10;
-		petFullness -= 10;
-		return petHappiness;
+		
+		return;
 
 	}
-	
+
 	public int getPetEnergy() {
 		return petEnergy;
 	}
-	
+
 	public int sleepPet() {
 		System.out.println("You pet slept for 2 hours");
-		petEnergy += 25; 
-		petFullness -= 10;
+		petEnergy += 25;
+		// petFullness -= 10;
 		return petEnergy;
+
+	}
+
+	public void feedPet() {
+		petCleanliness -= 5;
+		return;
 
 	}
 
 }
-
