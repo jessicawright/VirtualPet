@@ -80,12 +80,14 @@ public class PetShelter {
 			System.out.println("----------");
 		}
 		
-		
 	
-
 	}
+<<<<<<< HEAD
 
 }
 
 
+=======
+>>>>>>> 2c34b24ae1ac7bdde1c8ea73c90b66e18e3bcbdd
 
+	}
