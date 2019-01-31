@@ -47,6 +47,7 @@ public class PetShelterTest {
 		// act
 		underTestShelter.removePet(underTestPet); // will change the naming when i work on my own
 		int answer = underTestShelter.getPetsLength();
+		
 
 		// assert
 		assertEquals(answer, 0);
