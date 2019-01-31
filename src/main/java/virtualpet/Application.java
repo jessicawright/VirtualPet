@@ -17,11 +17,6 @@ public class Application {
 		virtualPetShelter.addPet(pet1);
 		virtualPetShelter.addPet(pet2);
 		virtualPetShelter.addPet(pet3);
-<<<<<<< HEAD
-//		System.out.println(virtualPetShelter.getPetsLength());
-=======
-		System.out.println("Welcome! The curretnt pet population is: " + virtualPetShelter.getPetsLength());
->>>>>>> 3783f2d59a321c0b91092b6cf274a63064952e38
 
 
 //		Pet virtualPet = createPet(userInput);

@@ -84,9 +84,8 @@ public class PetShelter {
 	
 
 	}
-<<<<<<< HEAD
+
 }
-=======
->>>>>>> c7093216bdb843f71055240de5a6b04ce16032c3
+
 
 
