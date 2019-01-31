@@ -1,6 +1,5 @@
 package virtualpet;
 
-import static org.junit.Assert.assertEquals;
 
 import java.util.HashMap;
 
@@ -26,9 +25,14 @@ public class PetShelter {
 
 	public void removePet() { 
 		for (Pet pet : pets.values()) {
-			if (pet.petAlive() == false) {
+			if (((Organic) pet).getPetOrganicAlive() == false) {
 				pets.remove(pet.getPetName());
+<<<<<<< HEAD
 			return;
+=======
+				return;
+			
+>>>>>>> ade573031d63ae9075ba7e8a81fd6d7670a800f9
 		}
 
 	}
@@ -66,26 +70,28 @@ public class PetShelter {
 	
 	public void allPetStatus() {
 		for (Pet pet : pets.values()) {
-			if (pet.petAlive()) {
+			if (((Organic) pet).getPetOrganicAlive()) {
 				System.out.println("Alive");
 			} else {
 				System.out.println("Dead");
 			}
 			System.out.println("Pet Status:");
 			System.out.println("For pet " + pet.getPetName());
-			System.out.println("Fullness = " + pet.getPetFullness());
+			System.out.println("Fullness = " + (((Organic) pet).getPetFullness()));
 			System.out.println("Cleanliness = " + pet.getPetCleanliness());
 			System.out.println("Energy = " + pet.getPetEnergy());
-			System.out.println("Happiness = " + pet.getPetHappiness()); // create method petStatus?
+			System.out.println("Happiness = " + (((Organic) pet).getPetHappiness())); // create method petStatus?
 			System.out.println("----------");
 		}
 		
-		
 	
-
 	}
+<<<<<<< HEAD
 
 }
 
 
+=======
+>>>>>>> ade573031d63ae9075ba7e8a81fd6d7670a800f9
 
+	}

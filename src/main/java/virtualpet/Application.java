@@ -10,9 +10,9 @@ public class Application {
 	public static void main(String[] args) {
 		
 //		String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy
-		Pet pet1 = new Pet("Spot", "dog", 115, false, 80, 75, 75);
-		Pet pet2 = new Pet("Happy", "cat", 50, false, 40, 60, 5);
-		Pet pet3 = new Pet("Saddy", "rabbit", 25, false, 50, 50, 50);
+		Pet pet1 = new Organic(true, "Spot", "dog", 115,  80, 75, 75);
+		Pet pet2 = new Organic(true, "Happy", "cat", 50,  40, 60, 5);
+		Pet pet3 = new Organic(true, "Saddy", "rabbit", 25,  50, 50, 50);
 
 		virtualPetShelter.addPet(pet1);
 		virtualPetShelter.addPet(pet2);
@@ -79,7 +79,7 @@ public class Application {
 					userPetType = userInput.nextLine().toLowerCase().trim();
 					}
 
-				Pet virtualPet1 = new Pet(userPetName, userPetType, 50, true, 50, 50, 50); // 0 not hungry at all
+				Pet virtualPet1 = new Organic(true, userPetName, userPetType, 115,  80, 75, 75);
 				virtualPetShelter.addPet(virtualPet1);
 				
 				System.out.println();
@@ -103,7 +103,7 @@ public class Application {
 
 		System.out.println("Your pet died.");
 
-	}
+	}//close main method
 
 	
-}
+}//close application class
