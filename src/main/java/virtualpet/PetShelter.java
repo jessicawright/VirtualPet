@@ -28,6 +28,7 @@ public class PetShelter {
 		for (Pet pet : pets.values()) {
 			if (pet.petAlive() == false) {
 				pets.remove(pet.getPetName());
+				return;
 			
 		}
 

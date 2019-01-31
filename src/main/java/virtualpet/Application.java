@@ -103,7 +103,7 @@ public class Application {
 
 		System.out.println("Your pet died.");
 
-	}
+	}//close main method
 
 	
-}
+}//close application class
