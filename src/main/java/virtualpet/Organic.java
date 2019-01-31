@@ -7,7 +7,7 @@ public class Organic extends Pet {
 			int petHappiness, int petEnergy) {
 		
 
-		super(petName, petType, petAlive, petCleanliness, petEnergy);
+		super(petName, petType, petEnergy, petAlive, petCleanliness, petEnergy, petEnergy);
 		
 		this.petFullness = petFullness;
 		this.petHappiness = petHappiness; 
