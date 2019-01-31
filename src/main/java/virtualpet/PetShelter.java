@@ -28,7 +28,7 @@ public class PetShelter {
 		for (Pet pet : pets.values()) {
 			if (pet.petAlive() == false) {
 				pets.remove(pet.getPetName());
-			
+				return;
 		}
 
 	}
@@ -82,12 +82,5 @@ public class PetShelter {
 		
 	
 	}
-<<<<<<< HEAD
-
-}
-
-
-=======
->>>>>>> 2c34b24ae1ac7bdde1c8ea73c90b66e18e3bcbdd
 
 	}
