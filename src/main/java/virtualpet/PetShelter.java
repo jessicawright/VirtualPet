@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class PetShelter {
 
-	private HashMap<String, Pet> pets = new HashMap<String, Pet>();
+	private HashMap<String, Pet> pets = new HashMap<String, Pet>(); //<key, value>
 	
 	
 	

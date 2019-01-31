@@ -66,7 +66,7 @@ public class Application {
 				// test user created pet name
 				System.out.println("Hello! Please enter a name for your new pet.");
 				String userPetName = userInput.nextLine();
-				System.out.println(userPetName);
+				System.out.println(userPetName + "is such a cute name");
 
 				// test user chosen pet type from list
 				System.out.println("Please choose a pet type");

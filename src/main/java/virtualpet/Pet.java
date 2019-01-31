@@ -13,7 +13,8 @@ public class Pet {
 	
 	
 
-	public Pet(String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy) {
+	public Pet(String petName, String petType, int petFullness, 
+			boolean petAlive, int petCleanliness, int petHappiness, int petEnergy) {
 
 		this.petName = petName;
 		this.petType = petType;
