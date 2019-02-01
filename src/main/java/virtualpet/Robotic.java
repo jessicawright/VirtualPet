@@ -6,9 +6,9 @@ public class Robotic extends Pet {
 	private int petOilLevel;
 	private int petServiceLevel; //cleanliness for robots, mutator is maintenance
 
-	public Robotic(String petName, String petType, boolean petAlive, int petOilLevel, int petBattery,
+	public Robotic(String petName, String petType, boolean petAlive, int deathValue, int petOilLevel, int petBattery,
 			int petCleanStatus) {
-		super(petName, petType, petAlive);
+		super(petName, petType, petAlive, deathValue);
 
 		this.petBattery = petBattery;
 		this.petOilLevel = petOilLevel;
@@ -33,6 +33,7 @@ public class Robotic extends Pet {
 		petOilLevel -= 5;
 		petBattery -= 3;
 		petServiceLevel -=5;
+		die();
 		return;
 	}
 	
@@ -50,7 +51,7 @@ public class Robotic extends Pet {
 	
 	public void die() {
 		if ((petOilLevel <= 0) || (petBattery <= 0)) {
-		super.die();
+			deathValue = -1;
 	}
 	}
 

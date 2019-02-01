@@ -5,12 +5,14 @@ public class Pet {
 	private String petName;
 	private String petType;
 	private boolean petAlive;
+	public int deathValue;
 
-	public Pet(String petName, String petType, boolean petAlive) {
+	public Pet(String petName, String petType, boolean petAlive, int deathValue) {
 
 		this.petName = petName;
 		this.petType = petType;
 		this.petAlive = true;
+		this.deathValue = 1;
 	}
 
 	public String getPetName() {
@@ -22,28 +24,31 @@ public class Pet {
 	}
 
 	public void incrementStatus() {
-		die();
+		
 		return;
 
 	}
 
-
 	public boolean isPetAlive() {
-		return petAlive;
+		if (getDeathValue() == 1) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public void setPetAlive(boolean petAlive) {
 		this.petAlive = petAlive;
 	}
 
+	public boolean getPetAlive() {
 
-	public  boolean getPetAlive() {
-		
 		return petAlive;
 	}
-	
-	public void die() {
-		this.petAlive = false;
+
+	public int getDeathValue() {
+		return deathValue;
 	}
 
+	
 }

@@ -12,9 +12,9 @@ public class Application {
 //		String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy
 
 
-		Pet pet1 = new Organic("dog", "Spot", true, 115,  80, 75, 75);
-		Pet pet2 = new Organic("cat", "Happy", true, 50,  40, 60, 5);
-		Pet pet3 = new Organic("rabbit", "Saddy", true, 25,  50, 50, 50);
+		Pet pet1 = new Organic("spot", "dog", true, 1, 115,  80, 75, 75);
+		Pet pet2 = new Organic("happy", "rabbit", true, 1, 50,  40, 60, 5);
+		Pet pet3 = new Organic("saddy", "cat", true, 1, 25,  50, 50, 50);
 
 
 		virtualPetShelter.addPet(pet1);
@@ -83,7 +83,7 @@ public class Application {
 					userPetType = userInput.nextLine().toLowerCase().trim();
 					}
 
-				Pet virtualPet1 = new Organic(userPetType, userPetName, true, 115,  80, 75, 75);
+				Pet virtualPet1 = new Organic(userPetType, userPetName, true, 1, 115,  80, 75, 75);
 				virtualPetShelter.addPet(virtualPet1);
 				
 				System.out.println();
@@ -103,7 +103,7 @@ public class Application {
 			
 			virtualPetShelter.incrementAllPets();
 			virtualPetShelter.removeOrganicPet();
-			virtualPetShelter.removeRoboticPet();
+		//	virtualPetShelter.removeRoboticPet();
 			
 		}
 

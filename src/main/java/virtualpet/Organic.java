@@ -7,10 +7,10 @@ public class Organic extends Pet {
 	private int petCleanliness;
 	private int petEnergy;
 
-	public Organic(String petName, String petType, boolean petAlive, int petFullness, int petCleanliness,
+	public Organic(String petName, String petType, boolean petAlive, int deathValue, int petFullness, int petCleanliness,
 			int petHappiness, int petEnergy) {
 
-		super(petName, petType, petAlive);
+		super(petName, petType, petAlive, deathValue);
 
 		this.petFullness = petFullness;
 		this.petHappiness = petHappiness;
@@ -39,6 +39,7 @@ public class Organic extends Pet {
 		super.incrementStatus();
 		petFullness -= 5;
 		petHappiness -= 3;
+		die();
 		return;
 	}
 
@@ -75,7 +76,7 @@ public class Organic extends Pet {
 
 	public void die() {
 		if ((petFullness <= 0) || (petFullness >= 120)) {
-			super.die();
+			deathValue = -1;
 		}
 	}
 

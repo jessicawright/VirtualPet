@@ -24,24 +24,23 @@ public class PetShelter {
 
 	public void removeOrganicPet() { 
 		for (Pet pet : pets.values()) {
-			if (pet instanceof Organic) {
-				if (!((Organic) pet).getPetAlive()) {
+			if (pet.getDeathValue() == -1) {
 				pets.remove(pet.getPetName());
 			}
 		}
 		}
-	}
-				
-	public void removeRoboticPet() { 
-		for (Pet pet : pets.values()) {
-			if (pet instanceof Robotic) {
-				if (!((Robotic) pet).getPetAlive()) {
-				pets.remove(pet.getPetName());
-			}
-		}
-		}
-	}
 	
+				
+//	public void removeRoboticPet() { 
+//		for (Pet pet : pets.values()) {
+//			if (pet instanceof Robotic) {
+//				if (((Robotic) pet).getDeathValue() != 1) {
+//				pets.remove(pet.getPetName());
+//			}
+//		}
+//		}
+//	}
+//	
 	public void feedAllPets() {
 		for (Pet pet : pets.values()) {
 			((Organic) pet).feedPet();
@@ -85,6 +84,7 @@ public class PetShelter {
 					System.out.println("Cleanliness = " + ((Organic) pet).getPetCleanliness());
 					System.out.println("Energy = " + ((Organic) pet).getPetEnergy());
 					System.out.println("Happiness = " + (((Organic) pet).getPetHappiness())); // create method petStatus?
+					System.out.println(pet.getDeathValue());
 					System.out.println("----------");
 				} else {
 					if (pet instanceof Robotic) {
@@ -93,6 +93,7 @@ public class PetShelter {
 					System.out.println("Oil Level = " + ((Robotic) pet).getPetOilLevel());
 					System.out.println("Clean Status = " + ((Robotic) pet).getPetCleanStatus());
 					System.out.println("Charge Level = " + ((Robotic) pet).getPetBattery());
+					System.out.println(pet.getDeathValue());
 					System.out.println("----------");
 				}
 			} 
