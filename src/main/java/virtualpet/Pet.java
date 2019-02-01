@@ -4,15 +4,13 @@ public class Pet {
 
 	private String petName;
 	private String petType;
-	private int petCleanliness;
-	private int petEnergy;
-	
-	public Pet(String petName, String petType, int petCleanliness, int petEnergy) {
+	private boolean petAlive;
+
+	public Pet(String petName, String petType, boolean petAlive) {
 
 		this.petName = petName;
 		this.petType = petType;
-		this.petCleanliness = petCleanliness;
-		this.petEnergy = petEnergy;
+		this.petAlive = true;
 	}
 
 	public String getPetName() {
@@ -24,44 +22,12 @@ public class Pet {
 	}
 
 	public void incrementStatus() {
-		// petFullness -= 5;
-		petCleanliness -= 5;
-		return;
-
-	}
-
-	public int getPetCleanliness() {
-		return petCleanliness;
-	}
-
-	public void cleanPet() {
-		petCleanliness += 50;
-
-		return;
-	}
-
-	public void playPet() {
-		
-		petCleanliness -= 20;
-		petEnergy -= 10;
 		
 		return;
 
 	}
 
-	public int getPetEnergy() {
-		return petEnergy;
-	}
 
-	public int sleepPet() {
-		System.out.println("You pet slept for 2 hours");
-		petEnergy += 25;
-		// petFullness -= 10;
-		return petEnergy;
-
-	}
-
-<<<<<<< HEAD
 	public boolean isPetAlive() {
 		return petAlive;
 	}
@@ -70,13 +36,10 @@ public class Pet {
 		this.petAlive = petAlive;
 	}
 
-}
-=======
-	public void feedPet() {
-		petCleanliness -= 5;
-		return;
->>>>>>> ade573031d63ae9075ba7e8a81fd6d7670a800f9
 
+	public  boolean getPetAlive() {
+		
+		return petAlive;
 	}
 
 }

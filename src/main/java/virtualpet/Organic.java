@@ -4,18 +4,26 @@ public class Organic extends Pet {
 	private boolean petOrganicAlive;
 	private int petHappiness;
 	private int petFullness;
+	private int petCleanliness;
+	private int petEnergy;
 
-	public Organic(boolean petOrganicAlive, String petName, String petType, int petFullness, int petCleanliness,
+	public Organic(String petName, String petType, boolean petAlive, int petFullness, int petCleanliness,
 			int petHappiness, int petEnergy) {
 
-		super(petName, petType, petCleanliness, petEnergy);
-		this.petOrganicAlive = petOrganicAlive;
+
+		
+		super(petName, petType, petAlive);
+		
+		
 		this.petFullness = petFullness;
 		this.petHappiness = petHappiness;
+		
+		this.petCleanliness = petCleanliness;
+		this.petEnergy = petEnergy;
 
 	}
 
-	public boolean getPetOrganicAlive() {
+	public boolean getPetAlive() {
 
 		if ((petFullness <= 0) || (petFullness >= 120)) {
 			return false;
@@ -32,11 +40,8 @@ public class Organic extends Pet {
 	}
 
 	public void feedPet() {
-		super.feedPet();
+		petCleanliness -=5;
 		petFullness += 25;
-		if (petFullness > 120 || petFullness < 0) {
-			petOrganicAlive = false;
-		}
 		return;
 
 	}
@@ -48,11 +53,38 @@ public class Organic extends Pet {
 		return;
 	}
 
-	public void playPet() {
-		super.playPet();
-		petHappiness += 25;
-		petFullness -= 10;
+	
+	
+	public int getPetCleanliness() {
+		return petCleanliness;
+	}
+
+	public void cleanPet() {
+		petCleanliness += 50;
+
 		return;
 	}
 
+	public void playPet() {
+		
+		petCleanliness -= 20;
+		petEnergy -= 10;
+		
+		return;
+
+	}
+
+	public int getPetEnergy() {
+		return petEnergy;
+	}
+	
+	public int sleepPet() {
+		System.out.println("You pet slept for 2 hours");
+		petEnergy += 25;
+		// petFullness -= 10;
+		return petEnergy;
+
+	}
+
+	
 } // close class

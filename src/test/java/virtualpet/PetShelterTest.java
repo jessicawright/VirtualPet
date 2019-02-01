@@ -43,10 +43,11 @@ public class PetShelterTest {
 	public void shouldRemovePetFromShelter() {
 
 		// arrange
-
+//		Pet underTestDeadPet = new Pet ("","",100,true,0,0,0); // Bini added this while reviewing
 		// act
-		underTestShelter.removePet(underTestPet);
+		underTestShelter.removePet(underTestPet); // will change the naming when i work on my own
 		int answer = underTestShelter.getPetsLength();
+		
 
 		// assert
 		assertEquals(answer, 0);

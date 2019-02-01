@@ -11,14 +11,15 @@ public class Application {
 		
 //		String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy
 
-		Pet pet1 = new Organic(true, "Spot", "dog", 115,  80, 75, 75);
-		Pet pet2 = new Organic(true, "Happy", "cat", 50,  40, 60, 5);
-		Pet pet3 = new Organic(true, "Saddy", "rabbit", 25,  50, 50, 50);
+		Pet pet1 = new Organic("dog", "Spot", true, 115,  80, 75, 75);
+		Pet pet2 = new Organic("cat", "Happy", true, 50,  40, 60, 5);
+		Pet pet3 = new Organic("rabbit", "Saddy", true, 25,  50, 50, 50);
+
 
 		virtualPetShelter.addPet(pet1);
 		virtualPetShelter.addPet(pet2);
 		virtualPetShelter.addPet(pet3);
-		System.out.println("Welcome! The curretnt pet population is: " + virtualPetShelter.getPetsLength());
+		System.out.println("Welcome! The current pet population is: " + virtualPetShelter.getPetsLength());
 
 
 //		Pet virtualPet = createPet(userInput);
@@ -67,7 +68,7 @@ public class Application {
 				// test user created pet name
 				System.out.println("Hello! Please enter a name for your new pet.");
 				String userPetName = userInput.nextLine();
-				System.out.println(userPetName);
+				System.out.println(userPetName + " is such a cute name");
 
 				// test user chosen pet type from list
 				System.out.println("Please choose a pet type");
@@ -80,7 +81,7 @@ public class Application {
 					userPetType = userInput.nextLine().toLowerCase().trim();
 					}
 
-				Pet virtualPet1 = new Organic(true, userPetName, userPetType, 115,  80, 75, 75);
+				Pet virtualPet1 = new Organic(userPetType, userPetName, true, 115,  80, 75, 75);
 				virtualPetShelter.addPet(virtualPet1);
 				
 				System.out.println();
@@ -103,6 +104,7 @@ public class Application {
 		}
 
 		System.out.println("Your pet died.");
+
 
 	}//close main method
 
