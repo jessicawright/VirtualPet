@@ -22,27 +22,37 @@ public class PetShelter {
 		return pets.size();
 	}
 
-	public void removePet() { 
+	public void removeOrganicPet() { 
 		for (Pet pet : pets.values()) {
-			if (((Organic) pet).getPetAlive() == false) {
+			if (pet instanceof Organic) {
+				if (!((Organic) pet).getPetAlive()) {
 				pets.remove(pet.getPetName());
-
-				return;
 			}
 		}
-			
-
+		}
+	}
+				
+	public void removeRoboticPet() { 
+		for (Pet pet : pets.values()) {
+			if (pet instanceof Robotic) {
+				if (!((Robotic) pet).getPetAlive()) {
+				pets.remove(pet.getPetName());
+			}
+		}
+		}
 	}
 	
 	public void feedAllPets() {
 		for (Pet pet : pets.values()) {
 			((Organic) pet).feedPet();
+			((Robotic) pet).addOil();
 		}
 	}
 	
 	public void cleanAllPets() {
 		for (Pet pet : pets.values()) {
 			((Organic) pet).cleanPet();
+			((Robotic) pet).maintainence();
 		}
 	}
 	
@@ -55,6 +65,7 @@ public class PetShelter {
 	public void sleepAllPets() {
 		for (Pet pet : pets.values()) {
 			((Organic) pet).sleepPet();
+			((Robotic) pet).chargeBattery();
 		}
 	}
 	
@@ -67,17 +78,26 @@ public class PetShelter {
 	public void allPetStatus() {
 		for (Pet pet : pets.values()) {
 			if (pet.getPetAlive()) {
-				System.out.println("Alive");
-			} else {
-				System.out.println("Dead");
+				if (pet instanceof Organic) {
+					System.out.println("Pet Status:");
+					System.out.println("For pet " + pet.getPetName());
+					System.out.println("Fullness = " + (((Organic) pet).getPetFullness()));
+					System.out.println("Cleanliness = " + ((Organic) pet).getPetCleanliness());
+					System.out.println("Energy = " + ((Organic) pet).getPetEnergy());
+					System.out.println("Happiness = " + (((Organic) pet).getPetHappiness())); // create method petStatus?
+					System.out.println("----------");
+				} else {
+					if (pet instanceof Robotic) {
+					System.out.println("Pet Status:");
+					System.out.println("For pet " + ((Robotic) pet).getPetName());
+					System.out.println("Oil Level = " + ((Robotic) pet).getPetOilLevel());
+					System.out.println("Clean Status = " + ((Robotic) pet).getPetCleanStatus());
+					System.out.println("Charge Level = " + ((Robotic) pet).getPetBattery());
+					System.out.println("----------");
+				}
+			} 
 			}
-			System.out.println("Pet Status:");
-			System.out.println("For pet " + pet.getPetName());
-			System.out.println("Fullness = " + (((Organic) pet).getPetFullness()));
-			System.out.println("Cleanliness = " + ((Organic) pet).getPetCleanliness());
-			System.out.println("Energy = " + ((Organic) pet).getPetEnergy());
-			System.out.println("Happiness = " + (((Organic) pet).getPetHappiness())); // create method petStatus?
-			System.out.println("----------");
+			
 		}
 		
 	

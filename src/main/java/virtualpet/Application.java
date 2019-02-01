@@ -11,6 +11,7 @@ public class Application {
 		
 //		String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy
 
+
 		Pet pet1 = new Organic("dog", "Spot", true, 115,  80, 75, 75);
 		Pet pet2 = new Organic("cat", "Happy", true, 50,  40, 60, 5);
 		Pet pet3 = new Organic("rabbit", "Saddy", true, 25,  50, 50, 50);
@@ -19,6 +20,7 @@ public class Application {
 		virtualPetShelter.addPet(pet1);
 		virtualPetShelter.addPet(pet2);
 		virtualPetShelter.addPet(pet3);
+
 		System.out.println("Welcome! The current pet population is: " + virtualPetShelter.getPetsLength());
 
 
@@ -100,7 +102,9 @@ public class Application {
 			}
 			
 			virtualPetShelter.incrementAllPets();
-			virtualPetShelter.removePet();
+			virtualPetShelter.removeOrganicPet();
+			virtualPetShelter.removeRoboticPet();
+			
 		}
 
 		System.out.println("Your pet died.");
