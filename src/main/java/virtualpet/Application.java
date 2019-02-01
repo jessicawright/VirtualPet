@@ -10,13 +10,17 @@ public class Application {
 	public static void main(String[] args) {
 		
 //		String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy
-		Pet pet1 = new Pet("Spot", "dog", 115, false, 80, 75, 75);
-		Pet pet2 = new Pet("Happy", "cat", 50, false, 40, 60, 5);
-		Pet pet3 = new Pet("Saddy", "rabbit", 25, false, 50, 50, 50);
+		Pet pet1 = new Organic("dog", "Spot", true, 115,  80, 75, 75);
+		Pet pet2 = new Organic("cat", "Happy", true, 50,  40, 60, 5);
+		Pet pet3 = new Organic("rabbit", "Saddy", true, 25,  50, 50, 50);
 
 		virtualPetShelter.addPet(pet1);
 		virtualPetShelter.addPet(pet2);
 		virtualPetShelter.addPet(pet3);
+<<<<<<< HEAD
+=======
+		System.out.println("Welcome! The current pet population is: " + virtualPetShelter.getPetsLength());
+>>>>>>> c0ec4cb4631f6b48554eeef81a7af0523bee6a30
 
 
 //		Pet virtualPet = createPet(userInput);
@@ -65,7 +69,7 @@ public class Application {
 				// test user created pet name
 				System.out.println("Hello! Please enter a name for your new pet.");
 				String userPetName = userInput.nextLine();
-				System.out.println(userPetName);
+				System.out.println(userPetName + " is such a cute name");
 
 				// test user chosen pet type from list
 				System.out.println("Please choose a pet type");
@@ -78,7 +82,7 @@ public class Application {
 					userPetType = userInput.nextLine().toLowerCase().trim();
 					}
 
-				Pet virtualPet1 = new Pet(userPetName, userPetType, 50, true, 50, 50, 50); // 0 not hungry at all
+				Pet virtualPet1 = new Organic(userPetType, userPetName, true, 115,  80, 75, 75);
 				virtualPetShelter.addPet(virtualPet1);
 				
 				System.out.println();
@@ -102,7 +106,8 @@ public class Application {
 
 		System.out.println("Your pet died.");
 
-	}
+
+	}//close main method
 
 	
-}
+}//close application class

@@ -34,7 +34,7 @@ public class PetTest {
 			// Act
 			boolean answer = underTest.petAlive();
 			// Assert
-			assertEquals(answer, true);
+			assertEquals(answer,true);
 	}
 	
 	@Test

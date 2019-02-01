@@ -1,12 +1,11 @@
 package virtualpet;
 
-import static org.junit.Assert.assertEquals;
 
 import java.util.HashMap;
 
 public class PetShelter {
 
-	private HashMap<String, Pet> pets = new HashMap<String, Pet>();
+	private HashMap<String, Pet> pets = new HashMap<String, Pet>(); //<key, value>
 	
 	
 	
@@ -26,35 +25,41 @@ public class PetShelter {
 
 	public void removePet() { 
 		for (Pet pet : pets.values()) {
-			if (pet.petAlive() == false) {
+			if (((Organic) pet).getPetAlive() == false) {
 				pets.remove(pet.getPetName());
+<<<<<<< HEAD
 				return;
-		}
+=======
 
-	}
+				return;
+			}
+>>>>>>> c0ec4cb4631f6b48554eeef81a7af0523bee6a30
+		}
+			
+
 	}
 	
 	public void feedAllPets() {
 		for (Pet pet : pets.values()) {
-			pet.feedPet();
+			((Organic) pet).feedPet();
 		}
 	}
 	
 	public void cleanAllPets() {
 		for (Pet pet : pets.values()) {
-			pet.cleanPet();
+			((Organic) pet).cleanPet();
 		}
 	}
 	
 	public void playAllPets() {
 		for (Pet pet : pets.values()) {
-			pet.playPet();
+			((Organic) pet).playPet();
 		}
 	}
 	
 	public void sleepAllPets() {
 		for (Pet pet : pets.values()) {
-			pet.sleepPet();
+			((Organic) pet).sleepPet();
 		}
 	}
 	
@@ -66,21 +71,26 @@ public class PetShelter {
 	
 	public void allPetStatus() {
 		for (Pet pet : pets.values()) {
-			if (pet.petAlive()) {
+			if (pet.getPetAlive()) {
 				System.out.println("Alive");
 			} else {
 				System.out.println("Dead");
 			}
 			System.out.println("Pet Status:");
 			System.out.println("For pet " + pet.getPetName());
-			System.out.println("Fullness = " + pet.getPetFullness());
-			System.out.println("Cleanliness = " + pet.getPetCleanliness());
-			System.out.println("Energy = " + pet.getPetEnergy());
-			System.out.println("Happiness = " + pet.getPetHappiness()); // create method petStatus?
+			System.out.println("Fullness = " + (((Organic) pet).getPetFullness()));
+			System.out.println("Cleanliness = " + ((Organic) pet).getPetCleanliness());
+			System.out.println("Energy = " + ((Organic) pet).getPetEnergy());
+			System.out.println("Happiness = " + (((Organic) pet).getPetHappiness())); // create method petStatus?
 			System.out.println("----------");
 		}
 		
 	
 	}
 
-	}
+
+}
+
+
+
+	
