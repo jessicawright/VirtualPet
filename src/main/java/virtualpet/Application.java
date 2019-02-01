@@ -10,17 +10,15 @@ public class Application {
 	public static void main(String[] args) {
 		
 //		String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy
-		Pet pet1 = new Organic("dog", "Spot", true, 115,  80, 75, 75);
-		Pet pet2 = new Organic("cat", "Happy", true, 50,  40, 60, 5);
-		Pet pet3 = new Organic("rabbit", "Saddy", true, 25,  50, 50, 50);
+		Pet pet1 = new Organic("Spot", "dog", true, 115,  80, 75, 75);
+		Pet pet2 = new Robotic("Happy", "cat", true, 50,  40, 60);
+		Pet pet3 = new Robotic("Saddy", "rabbit", true, 25,  50, 50);
 
 		virtualPetShelter.addPet(pet1);
 		virtualPetShelter.addPet(pet2);
 		virtualPetShelter.addPet(pet3);
-<<<<<<< HEAD
-=======
+
 		System.out.println("Welcome! The current pet population is: " + virtualPetShelter.getPetsLength());
->>>>>>> c0ec4cb4631f6b48554eeef81a7af0523bee6a30
 
 
 //		Pet virtualPet = createPet(userInput);
@@ -101,7 +99,9 @@ public class Application {
 			}
 			
 			virtualPetShelter.incrementAllPets();
-			virtualPetShelter.removePet();
+			virtualPetShelter.removeOrganicPet();
+			virtualPetShelter.removeRoboticPet();
+			
 		}
 
 		System.out.println("Your pet died.");

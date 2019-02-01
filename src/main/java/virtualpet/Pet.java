@@ -22,7 +22,7 @@ public class Pet {
 	}
 
 	public void incrementStatus() {
-		
+		die();
 		return;
 
 	}
@@ -30,6 +30,10 @@ public class Pet {
 	public  boolean getPetAlive() {
 		
 		return petAlive;
+	}
+	
+	public void die() {
+		this.petAlive = false;
 	}
 
 }
