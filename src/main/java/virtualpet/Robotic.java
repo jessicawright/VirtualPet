@@ -54,5 +54,17 @@ public class Robotic extends Pet {
 			deathValue = -1;
 	}
 	}
+	public void sendToVet(){
+		super.sendToVet();
+	    petBattery = 100;
+	    petServiceLevel = 100;
+	    petOilLevel = 100;
+	    return;
+	}
+	public void healthWarning() {
+		if ((petOilLevel <= 20) || (petBattery <= 20)) {
+			System.out.println("WARNING: Your Pet is dying, take it to the Vet.");
+		}
+	}
 
 }

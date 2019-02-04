@@ -39,6 +39,8 @@ public class Organic extends Pet {
 		super.incrementStatus();
 		petFullness -= 5;
 		petHappiness -= 3;
+		petCleanliness -= 5;
+		petEnergy -= 5;
 		die();
 		return;
 	}
@@ -77,6 +79,20 @@ public class Organic extends Pet {
 	public void die() {
 		if ((petFullness <= 0) || (petFullness >= 120)) {
 			deathValue = -1;
+		}
+	}
+	
+	public void sendToVet(){
+		super.sendToVet();
+	    petFullness = 80;
+	    petHappiness = 100;
+	    petCleanliness = 100;
+	    petEnergy = 100;
+	    return;
+	}
+	public void healthWarning() {
+		if ((petFullness <= 20) || (petFullness >= 110)) {
+			System.out.println("WARNING: Your Pet is dying, take it to the Vet.");
 		}
 	}
 
