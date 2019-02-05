@@ -19,29 +19,34 @@ public class Application {
 		virtualPetShelter.addPet(pet2);
 		virtualPetShelter.addPet(pet3);
 
-		System.out.println("Welcome! The current pet population is: " + virtualPetShelter.getPetsLength());
-
+		s("*************************************");
+		s(" Welcome! to The Thr33 Pets Shelter\n   Our Shelter Curruntly Holds " + virtualPetShelter.getPetsLength()+" Pets");
+		s("*************************************");
 //		Pet virtualPet = createPet(userInput);
-		System.out.println("*******************");
-		System.out.println("Press any number to start.");
+		
+		s("Press 1 + Enter to Enter The Game");
+		s("*************************************");
 		int userMenuChoice = userInput.nextInt();
 		userInput.nextLine();
+		
 
 		while (userMenuChoice != 9) {// (virtualPet.petAlive()) {
 
 			System.out.println(virtualPetShelter.getPetsLength());
 
-			System.out.println("1. feed all pets");
-			System.out.println("2. play with pets");
-			System.out.println("3. clean pets");
-			System.out.println("4. Accept new pet");
-			System.out.println("5. Let pets sleep");
-			System.out.println("6. Select a pet");
-			System.out.println("7. Check the status of the pets");
-			System.out.println("8. Adopt a pet out");
-			System.out.println("9. Exit");
-			System.out.println();
-			System.out.println("what would you like to do?");
+			s("1. feed all pets");
+			s("2. play with pets");
+			s("3. clean pets");
+			s("4. Accept new pet");
+			s("5. Let pets sleep");
+			s("6. Select a pet");
+			s("7. Check the status of the pets");
+			s("8. Adopt a pet out");
+			s("9. Exit");
+			s("--------------------------------");
+			s("what would you like to do?");
+			
+			s("*************************************");
 			userMenuChoice = userInput.nextInt();
 			userInput.nextLine();
 
@@ -63,25 +68,25 @@ public class Application {
 				break;
 			case 4:
 				// test user created pet name
-				System.out.println("Hello! Please enter a name for your new pet.");
+				s("Hello! Please enter a name for your new pet.");
 				String userPetName = userInput.nextLine();
-				System.out.println(userPetName + " is such a cute name");
+				s(userPetName + " is such a cute name");
 
 				// test user chosen pet type from list
-				System.out.println("Please choose a pet type");
-				System.out.println("DOG, CAT, RABBIT");
+				s("Please choose a pet type");
+				s("DOG, CAT, RABBIT");
 				String userPetType = userInput.nextLine().toLowerCase().trim();
 				// trim() method eliminates leading and trailing spaces
 
 				while (!userPetType.equals("dog") && !userPetType.equals("cat") && !userPetType.equals("rabbit")) {
-					System.out.println("Please try again...");
+					s("Please try again...");
 					userPetType = userInput.nextLine().toLowerCase().trim();
 				}
-				System.out.println("Is your " + userPetType + " 'organic' or 'robotic'?");
+				s("Is your " + userPetType + " 'organic' or 'robotic'?");
 				String userPetOrgRob = userInput.nextLine().toLowerCase().trim();
 
           while (!userPetOrgRob.equals("organic") && !userPetOrgRob.equals("robotic")) {
-					System.out.println("Please try again...");
+					s("Please try again...");
 					userPetOrgRob = userInput.nextLine().toLowerCase().trim();
 				}
 				if (userPetOrgRob.equals("organic")) {
@@ -91,9 +96,9 @@ public class Application {
 					}
 
 					System.out.println();
-					System.out.println(
+					s(
 							"Say hello to " + newOrganic.getPetName() + ", your new " + newOrganic.getPetType() + ".");
-					System.out.println("----------");
+					System.out.println("--------------------------------");
 				}
 
 				else if (userPetOrgRob.equals("robotic")) {
@@ -102,9 +107,9 @@ public class Application {
 						virtualPetShelter.addPet(virtualPet1);
 
 					System.out.println();
-					System.out.println("Say hello to " + virtualPet1.getPetName() + ", your new "
+					s("Say hello to " + virtualPet1.getPetName() + ", your new "
 							+ virtualPet1.getPetType() + ".");
-					System.out.println("----------");
+					s("-------------------------------");
 
 					// end user pet creation
 				}
@@ -115,20 +120,20 @@ public class Application {
 				break;
 			case 6:
 				
-				System.out.println("Select the pet you want to checkout");
+				s("Select the pet you want to checkout");
 				virtualPetShelter.petNameList();
 				Pet x = virtualPetShelter.getPet(userInput.next());				
 				
 				String userMenuChoice1 = userInput.nextLine();
 				while (!userMenuChoice1.equals("9")) {
 					if (x instanceof Organic) {
-						System.out.println("1. feed pet");
-						System.out.println("2. play with pet");
-						System.out.println("3. clean pet");
-						System.out.println("4. Let pet sleep");
-						System.out.println("5. Take pet to the Vet");
-						System.out.println("9. Exit");
-						System.out.println();
+						s("1. feed pet");
+						s("2. play with pet");
+						s("3. clean pet");
+						s("4. Let pet sleep");
+						s("5. Take pet to the Vet");
+						s("9. Exit");
+						
 						// the next cases fall under Organic
 
 						userMenuChoice1 = userInput.nextLine();
@@ -156,12 +161,12 @@ public class Application {
 						}
 					} else {
 						if (x instanceof Robotic) {
-							System.out.println("1. fill oil");
-							System.out.println("2. charge battery");
-							System.out.println("3. maintain pet");
-							System.out.println("4. Take pet to the Vet");
-							System.out.println("9. Exit");
-							System.out.println();
+							s("1. fill oil");
+							s("2. charge battery");
+							s("3. maintain pet");
+							s("4. Take pet to the Vet");
+							s("9. Exit");
+							
 							// the next cases fall under Organic
 							userMenuChoice1 = userInput.nextLine();
 							switch (userMenuChoice1) {
@@ -196,7 +201,7 @@ public class Application {
 				virtualPetShelter.allPetStatus();
 				break;
 			case 8: 
-				System.out.println("Please select a pet to adopt by entering their name: ");
+				s("Please select a pet to adopt by entering their name: ");
 				String petToAdopt = userInput.nextLine();
 				Pet adoptedPet = virtualPetShelter.getPet(petToAdopt);
 				virtualPetShelter.adoptPetOut(adoptedPet.getPetName());
@@ -204,7 +209,7 @@ public class Application {
 			case 9:
 				break;
 			default :
-				System.out.println("Try again.");
+				s("Try again.");
 				break;
 			}
 			virtualPetShelter.removePet();
@@ -212,9 +217,15 @@ public class Application {
 
 		}
 
-		System.out.println("Shelter closed.");
-		System.out.println("Goodbye.");
+		s("Shelter closed.");
+		s("Goodbye.");
+		s("_______***________");
 
 	}// close main method
+	
+	private static void s(String s) {
+		System.out.println(s);
+
+	}
 
 }// close application class
