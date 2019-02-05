@@ -95,13 +95,13 @@ public class PetShelter {
 					System.out.println(pet.getPetName().toUpperCase()+" Current Status is:");
 					System.out.println();
 					pet.healthWarning();
-					System.out.println("Fullness = " + (((Organic) pet).getPetFullness()));
-					System.out.println("Cleanliness = " + ((Organic) pet).getPetCleanliness());
-					System.out.println("Energy = " + ((Organic) pet).getPetEnergy());
-					System.out.println("Happiness = " + (((Organic) pet).getPetHappiness())); // create method
+					System.out.println((((Organic) pet).getPetFullness())+ " %\tFull");
+					System.out.println(((Organic) pet).getPetCleanliness()+ " %\tClean");
+					System.out.println(((Organic) pet).getPetEnergy()+ " %\tEnergy" );
+					System.out.println((((Organic) pet).getPetHappiness())+ " %\tHappier"); // create method
 																								// petStatus?
-					System.out.println(pet.getDeathValue());
-					System.out.println("---------------------");
+					System.out.println(pet.getDeathValue()+"\thas died");
+					System.out.println("-----------------------");
 				} else {
 					if (pet instanceof Robotic) {
 						System.out.println("**__Current Pet Status__**");
@@ -109,10 +109,10 @@ public class PetShelter {
 						System.out.println(((Robotic) pet).getPetName().toUpperCase()+" Current Status is:");
 						System.out.println();
 						pet.healthWarning();
-						System.out.println("Oil Level = " + ((Robotic) pet).getPetOilLevel());
-						System.out.println("Clean Status = " + ((Robotic) pet).getPetCleanStatus());
-						System.out.println("Charge Level = " + ((Robotic) pet).getPetBattery());
-						System.out.println(pet.getDeathValue());
+						System.out.println(((Robotic) pet).getPetOilLevel() + " %\tOil Level");
+						System.out.println(((Robotic) pet).getPetCleanStatus() +" %\tClean");
+						System.out.println(((Robotic) pet).getPetBattery()+ " %\tBattery full");
+						System.out.println(pet.getDeathValue()+ 			 "\thas died");
 						System.out.println("-------------------");
 					}
 				}

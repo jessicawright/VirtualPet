@@ -217,9 +217,9 @@ public class Application {
 
 		}
 
-		s("Shelter closed.");
-		s("Goodbye.");
-		s("_______***________");
+		s("\tShelter Closed.");
+		s("\t   Goodbye.");
+		s("\t______***________");
 
 	}// close main method
 	
