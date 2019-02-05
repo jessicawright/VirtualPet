@@ -25,6 +25,7 @@ public class Application {
 		System.out.println("*******************");
 		System.out.println("Press any key to start.");
 		int userMenuChoice = userInput.nextInt();
+		userInput.nextInt();
 
 		while (userMenuChoice != 9) {// (virtualPet.petAlive()) {
 
@@ -41,6 +42,7 @@ public class Application {
 			System.out.println();
 			System.out.println("what would you like to do?");
 			userMenuChoice = userInput.nextInt();
+			userInput.nextLine();
 
 			System.out.println(userMenuChoice);
 			
