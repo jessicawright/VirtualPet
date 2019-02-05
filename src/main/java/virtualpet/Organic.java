@@ -7,8 +7,8 @@ public class Organic extends Pet {
 	private int petCleanliness;
 	private int petEnergy;
 
-	public Organic(String petName, String petType, boolean petAlive, int deathValue, int petFullness, int petCleanliness,
-			int petHappiness, int petEnergy) {
+	public Organic(String petName, String petType, boolean petAlive, int deathValue, int petFullness,
+			int petCleanliness, int petHappiness, int petEnergy) {
 
 		super(petName, petType, petAlive, deathValue);
 
@@ -78,18 +78,19 @@ public class Organic extends Pet {
 
 	public void die() {
 		if ((petFullness <= 0) || (petFullness >= 120)) {
-			deathValue = -1;
+			super.die();
 		}
 	}
-	
-	public void sendToVet(){
+
+	public void sendToVet() {
 		super.sendToVet();
-	    petFullness = 80;
-	    petHappiness = 100;
-	    petCleanliness = 100;
-	    petEnergy = 100;
-	    return;
+		petFullness = 80;
+		petHappiness = 100;
+		petCleanliness = 100;
+		petEnergy = 100;
+		return;
 	}
+
 	public void healthWarning() {
 		if ((petFullness <= 20) || (petFullness >= 110)) {
 			System.out.println("WARNING: Your Pet is dying, take it to the Vet.");

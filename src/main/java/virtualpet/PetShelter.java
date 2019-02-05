@@ -39,15 +39,21 @@ public class PetShelter {
 //	
 	public void feedAllPets() {
 		for (Pet pet : pets.values()) {
-			((Organic) pet).feedPet();
-			((Robotic) pet).addOil();
+			if (pet instanceof Organic) {
+				((Organic) pet).feedPet();
+			} else {
+				((Robotic) pet).addOil();
+			}
 		}
 	}
 
 	public void cleanAllPets() {
 		for (Pet pet : pets.values()) {
-			((Organic) pet).cleanPet();
-			((Robotic) pet).maintainence();
+			if (pet instanceof Organic) {
+				((Organic) pet).cleanPet();
+			} else {
+				((Robotic) pet).maintainence();
+			}
 		}
 	}
 

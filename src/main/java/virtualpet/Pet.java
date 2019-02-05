@@ -5,7 +5,7 @@ abstract class  Pet {
 	private String petName;
 	private String petType;
 	private boolean petAlive;
-	public int deathValue;
+	private int deathValue;
 
 	public Pet(String petName, String petType, boolean petAlive, int deathValue) {
 
@@ -30,7 +30,7 @@ abstract class  Pet {
 	}
 
 	public boolean isPetAlive() {
-		if (getDeathValue() == 1) {
+		if (deathValue == 1) {
 			return true;
 		} else {
 			return false;
@@ -55,6 +55,11 @@ abstract class  Pet {
 	}
 	public void healthWarning() {
 		return;
+	}
+	public void die() {
+		deathValue = -1;
+		return;
+		
 	}
 		
 }
