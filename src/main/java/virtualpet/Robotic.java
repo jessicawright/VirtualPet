@@ -65,7 +65,8 @@ public class Robotic extends Pet {
 
 	public void healthWarning() {
 		if ((petOilLevel <= 20) || (petBattery <= 20)) {
-			System.out.println("WARNING: Your Pet is dying, take it to the Vet.");
+			System.out.println("WARNING: Your Pet is dying, \nTtake your pet to the nearest Vet.");
+			System.out.println();
 		}
 	}
 

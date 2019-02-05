@@ -103,7 +103,8 @@ public class Organic extends Pet {
 
 	public void healthWarning() {
 		if ((petFullness <= 20) || (petFullness >= 110)) {
-			System.out.println("WARNING: Your Pet is dying, take it to the Vet.");
+			System.out.println("WARNING: Your Pet is dying, \nTake your pet to the nearest Vet.");
+			System.out.println();
 		}
 	}
 

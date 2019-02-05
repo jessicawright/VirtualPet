@@ -43,7 +43,7 @@ public class Application {
 			s("7. Check the status of the pets");
 			s("8. Adopt a pet out");
 			s("9. Exit");
-			s("--------------------------------");
+			s("------------------------------");
 			s("what would you like to do?");
 			
 			s("*************************************");
