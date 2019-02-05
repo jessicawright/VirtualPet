@@ -1,43 +1,19 @@
 package virtualpet;
 
-public class Pet {
+abstract class  Pet {
 
 	private String petName;
 	private String petType;
-	private int petFullness;
 	private boolean petAlive;
-	private int petCleanliness;
-	private int petHappiness; 
-	private int petEnergy;
-	
-	
-	
+	private int deathValue;
 
-	public Pet(String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy) {
+	public Pet(String petName, String petType, boolean petAlive, int deathValue) {
 
 		this.petName = petName;
 		this.petType = petType;
-		this.petFullness = petFullness;
 		this.petAlive = true;
-		this.petCleanliness = petCleanliness;
-		this.petHappiness = petHappiness; 
-		this.petEnergy  = petEnergy; 
+		this.deathValue = 1;
 	}
-
-	// this will be in our while loop printing out our pet died
-	public boolean petAlive() {
-
-		if ((petFullness <= 0) || (petFullness >= 120)) {
-			return false;
-		} else
-			return true;
-	}
-//	public String getPetAlive() {
-//		if (petAlive ) {
-//			return "alive";
-//		} else
-//			return "dead";
-//	}
 
 	public String getPetName() {
 		return petName;
@@ -47,59 +23,43 @@ public class Pet {
 		return petType;
 	}
 
-	public int feedPet() {
-		petFullness += 25;
-//		if (petFullness > 120 || petFullness < 0) {
-//			petAlive = false; 
-//		}
-		return petFullness;
-
-	}
-
 	public void incrementStatus() {
-		petFullness -= 5;
-		petCleanliness -=5;
+		
 		return;
 
 	}
 
-	public int getPetFullness() {
-		return petFullness;
+	public boolean isPetAlive() {
+		if (deathValue == 1) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
-	public int getPetCleanliness() {
-		return petCleanliness;
+	public void setPetAlive(boolean petAlive) {
+		this.petAlive = petAlive;
 	}
 
-	public int cleanPet() {
-		petCleanliness += 50;
-		return petCleanliness;
-	}
-	
-	public int getPetHappiness() {
-		return petHappiness;
-	}
-	
-	public int playPet() {
-		petHappiness += 25;
-		petCleanliness -= 20;
-		petEnergy -= 10;
-		petFullness -= 10;
-		return petHappiness;
+	public boolean getPetAlive() {
 
-	}
-	
-	public int getPetEnergy() {
-		return petEnergy;
-	}
-	
-	public int sleepPet() {
-		System.out.println("You pet slept for 2 hours");
-		petEnergy += 25; 
-		petFullness -= 10;
-		return petEnergy;
-
+		return petAlive;
 	}
 
+	public int getDeathValue() {
+		return deathValue;
+	}
+
+	public void sendToVet(){
+	   	    return;
+	}
+	public void healthWarning() {
+		return;
+	}
+	public void die() {
+		deathValue = -1;
+		return;
+		
+	}
+		
 }
-

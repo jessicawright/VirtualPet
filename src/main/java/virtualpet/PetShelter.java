@@ -1,21 +1,16 @@
 package virtualpet;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.HashMap;
 
 public class PetShelter {
 
-	private HashMap<String, Pet> pets = new HashMap<String, Pet>();
-	
-	
-	
+	private HashMap<String, Pet> pets = new HashMap<String, Pet>(); // <key, value>
 
 	public void addPet(Pet virtualPet) {
 		pets.put(virtualPet.getPetName(), virtualPet);
 
 	}
-	
+
 	public Pet getPet(String petToGet) {
 		return pets.get(petToGet);
 	}
@@ -24,64 +19,116 @@ public class PetShelter {
 		return pets.size();
 	}
 
-	public void removePet() { 
+	public void removePet() {
+		String petToRemove = "";
 		for (Pet pet : pets.values()) {
-			if (pet.petAlive() == false) {
-				pets.remove(pet.getPetName());
+			if (pet.getDeathValue() == -1) {
+				petToRemove = pet.getPetName();
+			}
+		}
+		pets.remove(petToRemove);
+	}
+
+//	public void removeRoboticPet() { 
+//		for (Pet pet : pets.values()) {
+//			if (pet instanceof Robotic) {
+//				if (((Robotic) pet).getDeathValue() != 1) {
+//				pets.remove(pet.getPetName());
+//			}
+//		}
+//		}
+//	}
+//	
+	public void feedAllPets() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof Organic) {
+				((Organic) pet).feedPet();
+			} else {
+				((Robotic) pet).addOil();
+			}
+		}
+	}
+
+	public void cleanAllPets() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof Organic) {
+				((Organic) pet).cleanPet();
+			} else {
+				((Robotic) pet).maintainence();
+			}
+		}
+	}
+
+	public void playAllPets() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof Organic) {
+				((Organic) pet).playPet();
+			} else {
 				return;
-			
+			}
+		}
+	}
+
+	public void sleepAllPets() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof Organic) {
+				((Organic) pet).sleepPet();
+			} else {
+				((Robotic) pet).chargeBattery();
+			}
 		}
 
 	}
-	}
-	
-	public void feedAllPets() {
-		for (Pet pet : pets.values()) {
-			pet.feedPet();
-		}
-	}
-	
-	public void cleanAllPets() {
-		for (Pet pet : pets.values()) {
-			pet.cleanPet();
-		}
-	}
-	
-	public void playAllPets() {
-		for (Pet pet : pets.values()) {
-			pet.playPet();
-		}
-	}
-	
-	public void sleepAllPets() {
-		for (Pet pet : pets.values()) {
-			pet.sleepPet();
-		}
-	}
-	
+
 	public void incrementAllPets() {
 		for (Pet pet : pets.values()) {
 			pet.incrementStatus();
 		}
 	}
-	
+
 	public void allPetStatus() {
 		for (Pet pet : pets.values()) {
-			if (pet.petAlive()) {
-				System.out.println("Alive");
-			} else {
-				System.out.println("Dead");
+			if (pet.getPetAlive()) {
+				if (pet instanceof Organic) {
+					System.out.println("Pet Status:");
+					System.out.println("For pet " + pet.getPetName());
+					pet.healthWarning();
+					System.out.println("Fullness = " + (((Organic) pet).getPetFullness()));
+					System.out.println("Cleanliness = " + ((Organic) pet).getPetCleanliness());
+					System.out.println("Energy = " + ((Organic) pet).getPetEnergy());
+					System.out.println("Happiness = " + (((Organic) pet).getPetHappiness())); // create method
+																								// petStatus?
+					System.out.println(pet.getDeathValue());
+					System.out.println("----------");
+				} else {
+					if (pet instanceof Robotic) {
+						System.out.println("Pet Status:");
+						System.out.println("For pet " + ((Robotic) pet).getPetName());
+						pet.healthWarning();
+						System.out.println("Oil Level = " + ((Robotic) pet).getPetOilLevel());
+						System.out.println("Clean Status = " + ((Robotic) pet).getPetCleanStatus());
+						System.out.println("Charge Level = " + ((Robotic) pet).getPetBattery());
+						System.out.println(pet.getDeathValue());
+						System.out.println("----------");
+					}
+				}
 			}
-			System.out.println("Pet Status:");
-			System.out.println("For pet " + pet.getPetName());
-			System.out.println("Fullness = " + pet.getPetFullness());
-			System.out.println("Cleanliness = " + pet.getPetCleanliness());
-			System.out.println("Energy = " + pet.getPetEnergy());
-			System.out.println("Happiness = " + pet.getPetHappiness()); // create method petStatus?
-			System.out.println("----------");
+
 		}
-		
-	
-	}
 
 	}
+
+	public void petNameList() {
+		for (Pet pet : pets.values()) {
+//			if (pet instanceof Organic) {
+//				System.out.println(pet.getPetName());
+//			} else {
+//				if (pet instanceof Robotic) {
+					System.out.println(pet.getPetName());
+				}
+				return;
+			}
+
+//		}
+//	}
+}
