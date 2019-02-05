@@ -20,11 +20,13 @@ public class PetShelter {
 	}
 
 	public void removePet() {
+		String petToRemove = "";
 		for (Pet pet : pets.values()) {
 			if (pet.getDeathValue() == -1) {
-				pets.remove(pet.getPetName());
+				petToRemove = pet.getPetName();
 			}
 		}
+		pets.remove(petToRemove);
 	}
 
 //	public void removeRoboticPet() { 

@@ -1,7 +1,7 @@
 package virtualpet;
 
 public class Organic extends Pet {
-	private boolean petOrganicAlive;
+	
 	private int petHappiness;
 	private int petFullness;
 	private int petCleanliness;
@@ -31,6 +31,10 @@ public class Organic extends Pet {
 	public void feedPet() {
 		petCleanliness -= 5;
 		petFullness += 25;
+		if (petFullness >= 100) {
+			petFullness = 100;
+			System.out.println("Your pet is allready full.");
+		}
 		return;
 
 	}
@@ -40,7 +44,13 @@ public class Organic extends Pet {
 		petFullness -= 5;
 		petHappiness -= 3;
 		petCleanliness -= 5;
+		if (petCleanliness <= 0) {
+			petCleanliness = 0;
+		}
 		petEnergy -= 5;
+		if (petEnergy <= 0) {
+			petEnergy = 0;
+		}
 		die();
 		return;
 	}
@@ -77,7 +87,7 @@ public class Organic extends Pet {
 	}
 
 	public void die() {
-		if ((petFullness <= 0) || (petFullness >= 120)) {
+		if (petFullness <= 0) {
 			super.die();
 		}
 	}
