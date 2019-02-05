@@ -61,15 +61,23 @@ public class PetShelter {
 
 	public void playAllPets() {
 		for (Pet pet : pets.values()) {
-			((Organic) pet).playPet();
+			if (pet instanceof Organic) {
+				((Organic) pet).playPet();
+			} else {
+				return;
+			}
 		}
 	}
 
 	public void sleepAllPets() {
 		for (Pet pet : pets.values()) {
-			((Organic) pet).sleepPet();
-			((Robotic) pet).chargeBattery();
+			if (pet instanceof Organic) {
+				((Organic) pet).sleepPet();
+			} else {
+				((Robotic) pet).chargeBattery();
+			}
 		}
+
 	}
 
 	public void incrementAllPets() {
@@ -112,15 +120,15 @@ public class PetShelter {
 
 	public void petNameList() {
 		for (Pet pet : pets.values()) {
-			if (pet instanceof Organic) {
-				System.out.println(pet.getPetName());
-			} else {
-				if (pet instanceof Robotic) {
+//			if (pet instanceof Organic) {
+//				System.out.println(pet.getPetName());
+//			} else {
+//				if (pet instanceof Robotic) {
 					System.out.println(pet.getPetName());
 				}
 				return;
 			}
 
-		}
-	}
+//		}
+//	}
 }
