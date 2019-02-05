@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class PetShelter {
 
-	private HashMap<String, Pet> pets = new HashMap<String, Pet>(); // <key, value>
+	private HashMap<String, Pet> pets = new HashMap<String, Pet>(); 
 
 	public void addPet(Pet virtualPet) {
 		pets.put(virtualPet.getPetName(), virtualPet);
@@ -29,16 +29,6 @@ public class PetShelter {
 		pets.remove(petToRemove);
 	}
 
-//	public void removeRoboticPet() { 
-//		for (Pet pet : pets.values()) {
-//			if (pet instanceof Robotic) {
-//				if (((Robotic) pet).getDeathValue() != 1) {
-//				pets.remove(pet.getPetName());
-//			}
-//		}
-//		}
-//	}
-//	
 	public void feedAllPets() {
 		for (Pet pet : pets.values()) {
 			if (pet instanceof Organic) {
@@ -120,20 +110,14 @@ public class PetShelter {
 
 	public void petNameList() {
 		for (Pet pet : pets.values()) {
-//			if (pet instanceof Organic) {
-//				System.out.println(pet.getPetName());
-//			} else {
-//				if (pet instanceof Robotic) {
-					System.out.println(pet.getPetName());
-				}
-				return;
-			}
+			System.out.println(pet.getPetName());
+		}
+		return;
+	}
 
 	public void adoptPetOut(String petName) {
 		pets.remove(petName);
 		System.out.println(petName + " found a new home.");
 	}
 
-//		}
-//	}
 }

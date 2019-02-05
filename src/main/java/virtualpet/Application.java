@@ -9,11 +9,9 @@ public class Application {
 
 	public static void main(String[] args) {
 
-//		String petName, String petType, int petFullness, boolean petAlive, int petCleanliness, int petHappiness, int petEnergy
-
-		Pet pet1 = new Robotic("spot", "dog", true, 1, 20, 80, 75);
-		Pet pet2 = new Robotic("happy", "rabbit", true, 1, 50, 40, 60);
-		Pet pet3 = new Organic("saddy", "cat", true, 1, 10, 50, 50, 0);
+		Pet pet1 = new Robotic("Spot", "dog", true, 1, 20, 80, 75);
+		Pet pet2 = new Robotic("Happy", "rabbit", true, 1, 50, 40, 60);
+		Pet pet3 = new Organic("Shadow", "cat", true, 1, 10, 50, 50, 0);
 
 		virtualPetShelter.addPet(pet1);
 		virtualPetShelter.addPet(pet2);
