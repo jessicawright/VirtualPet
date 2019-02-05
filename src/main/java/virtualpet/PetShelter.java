@@ -129,6 +129,11 @@ public class PetShelter {
 				return;
 			}
 
+	public void adoptPetOut(String petName) {
+		pets.remove(petName);
+		System.out.println(petName + " found a new home.");
+	}
+
 //		}
 //	}
 }

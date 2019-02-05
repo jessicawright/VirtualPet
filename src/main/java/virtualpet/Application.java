@@ -23,9 +23,9 @@ public class Application {
 
 //		Pet virtualPet = createPet(userInput);
 		System.out.println("*******************");
-		System.out.println("Press any key to start.");
+		System.out.println("Press any number to start.");
 		int userMenuChoice = userInput.nextInt();
-		userInput.nextInt();
+		userInput.nextLine();
 
 		while (userMenuChoice != 9) {// (virtualPet.petAlive()) {
 
@@ -38,6 +38,7 @@ public class Application {
 			System.out.println("5. Let pets sleep");
 			System.out.println("6. Select a pet");
 			System.out.println("7. Check the status of the pets");
+			System.out.println("8. Adopt a pet out");
 			System.out.println("9. Exit");
 			System.out.println();
 			System.out.println("what would you like to do?");
@@ -194,7 +195,11 @@ public class Application {
 				virtualPetShelter.removePet();
 				virtualPetShelter.allPetStatus();
 				break;
-			case 8:
+			case 8: 
+				System.out.println("Please select a pet to adopt by entering their name: ");
+				String petToAdopt = userInput.nextLine();
+				Pet adoptedPet = virtualPetShelter.getPet(petToAdopt);
+				virtualPetShelter.adoptPetOut(adoptedPet.getPetName());
 				break;
 			case 9:
 				break;
