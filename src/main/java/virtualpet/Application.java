@@ -25,6 +25,7 @@ public class Application {
 		System.out.println("*******************");
 		System.out.println("Press any key to start.");
 		int userMenuChoice = userInput.nextInt();
+		userInput.nextInt();
 
 		while (userMenuChoice != 9) {// (virtualPet.petAlive()) {
 
@@ -41,6 +42,7 @@ public class Application {
 			System.out.println();
 			System.out.println("what would you like to do?");
 			userMenuChoice = userInput.nextInt();
+			userInput.nextLine();
 
 			System.out.println(userMenuChoice);
 			
@@ -74,16 +76,37 @@ public class Application {
 					System.out.println("Please try again...");
 					userPetType = userInput.nextLine().toLowerCase().trim();
 				}
+				System.out.println("Is your " + userPetType + " 'organic' or 'robotic'?");
+				String userPetOrgRob = userInput.nextLine().toLowerCase().trim();
 
-				Pet virtualPet1 = new Organic(userPetName, userPetType, true, 1, 115, 80, 75, 75);
-				virtualPetShelter.addPet(virtualPet1);
+          while (!userPetOrgRob.equals("organic") && !userPetOrgRob.equals("robotic")) {
+					System.out.println("Please try again...");
+					userPetOrgRob = userInput.nextLine().toLowerCase().trim();
+				}
+				if (userPetOrgRob.equals("organic")) {
+					Pet newOrganic = new Organic(userPetName, userPetType, true, 1, 115, 80, 75, 75);
+					if (newOrganic instanceof Organic) {
+						virtualPetShelter.addPet(newOrganic);
+					}
 
-				System.out.println();
-				System.out.println(
-						"Say hello to " + virtualPet1.getPetName() + ", your new " + virtualPet1.getPetType() + ".");
-				System.out.println("----------");
-				// end user pet creation
-				virtualPetShelter.incrementAllPets();
+					System.out.println();
+					System.out.println(
+							"Say hello to " + newOrganic.getPetName() + ", your new " + newOrganic.getPetType() + ".");
+					System.out.println("----------");
+				}
+
+				else if (userPetOrgRob.equals("robotic")) {
+					Pet virtualPet1 = new Robotic(userPetName, userPetType, true, 1, 115, 80, 75);
+					if (virtualPet1 instanceof Robotic)
+						virtualPetShelter.addPet(virtualPet1);
+
+					System.out.println();
+					System.out.println("Say hello to " + virtualPet1.getPetName() + ", your new "
+							+ virtualPet1.getPetType() + ".");
+					System.out.println("----------");
+
+					// end user pet creation
+				}
 				break;
 			case 5:
 				virtualPetShelter.sleepAllPets();
@@ -161,7 +184,7 @@ public class Application {
 							}
 						}
 					}
-					
+
 				}
 				virtualPetShelter.incrementAllPets();
 				break;
@@ -179,7 +202,6 @@ public class Application {
 				System.out.println("Try again.");
 				break;
 			}
-			
 			virtualPetShelter.removePet();
 			// virtualPetShelter.removeRoboticPet();
 
