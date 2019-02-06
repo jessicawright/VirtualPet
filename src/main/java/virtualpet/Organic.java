@@ -1,7 +1,7 @@
 package virtualpet;
 
 public class Organic extends Pet {
-	
+
 	private int petHappiness;
 	private int petFullness;
 	private int petCleanliness;
@@ -35,6 +35,9 @@ public class Organic extends Pet {
 			petFullness = 100;
 			System.out.println("Your pet is allready full.");
 		}
+		if (petCleanliness <= 0) {
+			petCleanliness = 0;
+		}
 		return;
 
 	}
@@ -51,6 +54,9 @@ public class Organic extends Pet {
 		if (petEnergy <= 0) {
 			petEnergy = 0;
 		}
+		if (petHappiness <= 0) {
+			petHappiness = 0;
+		}
 		die();
 		return;
 	}
@@ -61,15 +67,27 @@ public class Organic extends Pet {
 
 	public void cleanPet() {
 		petCleanliness += 50;
-
+		if (petCleanliness >= 100) {
+			petCleanliness = 100;
+		}
 		return;
+
 	}
 
 	public void playPet() {
-
+		petHappiness += 50;
 		petCleanliness -= 20;
 		petEnergy -= 10;
-
+		if (petCleanliness <= 0) {
+			petCleanliness = 0;
+		}
+		if (petEnergy <= 0) {
+			petEnergy = 0;
+			
+		if (petHappiness >= 100) {
+			petHappiness = 100;
+			}
+		}
 		return;
 
 	}
@@ -81,7 +99,9 @@ public class Organic extends Pet {
 	public int sleepPet() {
 		System.out.println("You pet slept for 2 hours");
 		petEnergy += 25;
-		// petFullness -= 10;
+		if (petEnergy >= 100) {
+			petEnergy = 100;
+		}
 		return petEnergy;
 
 	}
@@ -94,7 +114,7 @@ public class Organic extends Pet {
 
 	public void sendToVet() {
 		super.sendToVet();
-		petFullness = 80;
+		petFullness = 100;
 		petHappiness = 100;
 		petCleanliness = 100;
 		petEnergy = 100;
@@ -102,7 +122,7 @@ public class Organic extends Pet {
 	}
 
 	public void healthWarning() {
-		if ((petFullness <= 20) || (petFullness >= 110)) {
+		if (petFullness <= 20) {
 			System.out.println("WARNING: Your Pet is dying, \nTake your pet to the nearest Vet.");
 			System.out.println();
 		}

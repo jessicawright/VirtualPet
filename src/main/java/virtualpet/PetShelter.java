@@ -110,7 +110,7 @@ public class PetShelter {
 						System.out.println();
 						pet.healthWarning();
 						System.out.println(((Robotic) pet).getPetOilLevel() + " %\tOil Level");
-						System.out.println(((Robotic) pet).getPetCleanStatus() +" %\tClean");
+						System.out.println(((Robotic) pet).getPetCleanStatus() +" %\tMaintenance level");
 						System.out.println(((Robotic) pet).getPetBattery()+ " %\tBattery full");
 						System.out.println(pet.getDeathValue()+ 			 "\thas died");
 						System.out.println("-------------------");

@@ -31,22 +31,36 @@ public class Robotic extends Pet {
 	public void incrementStatus() {
 		super.incrementStatus();
 		petOilLevel -= 5;
+		if (petOilLevel <= 0)
+			petOilLevel = 0;
 		petBattery -= 3;
+		if (petBattery <= 0)
+			petBattery = 0;
 		petServiceLevel -= 5;
+		if (petServiceLevel <= 0)
+			petServiceLevel = 0;
+		
 		die();
 		return;
 	}
 
 	public void maintainence() {
 		petServiceLevel += 20;
+		if (petServiceLevel >= 100)
+			petServiceLevel = 100;
+		
 	}
 
 	public void chargeBattery() {
 		petBattery += 20;
+		if (petBattery >= 100)
+			petBattery = 100;
 	}
 
 	public void addOil() {
 		petOilLevel += 20;
+		if (petOilLevel >= 100)
+			petOilLevel = 100;
 	}
 
 	public void die() {

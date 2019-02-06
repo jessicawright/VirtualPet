@@ -34,9 +34,9 @@ public class Application {
 
 			System.out.println(virtualPetShelter.getPetsLength());
 
-			s("1. feed all pets");
-			s("2. play with pets");
-			s("3. clean pets");
+			s("1. Feed all pets");
+			s("2. Play with pets");
+			s("3. Clean pets");
 			s("4. Accept new pet");
 			s("5. Let pets sleep");
 			s("6. Select a pet");
@@ -127,9 +127,9 @@ public class Application {
 				String userMenuChoice1 = userInput.nextLine();
 				while (!userMenuChoice1.equals("9")) {
 					if (x instanceof Organic) {
-						s("1. feed pet");
-						s("2. play with pet");
-						s("3. clean pet");
+						s("1. Feed pet");
+						s("2. Play with pet");
+						s("3. Clean pet");
 						s("4. Let pet sleep");
 						s("5. Take pet to the Vet");
 						s("9. Exit");
@@ -161,9 +161,9 @@ public class Application {
 						}
 					} else {
 						if (x instanceof Robotic) {
-							s("1. fill oil");
-							s("2. charge battery");
-							s("3. maintain pet");
+							s("1. Fill oil");
+							s("2. Charge battery");
+							s("3. Maintain pet");
 							s("4. Take pet to the Vet");
 							s("9. Exit");
 							
