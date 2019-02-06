@@ -83,11 +83,10 @@ public class Organic extends Pet {
 		}
 		if (petEnergy <= 0) {
 			petEnergy = 0;
-			
+		}
 		if (petHappiness >= 100) {
 			petHappiness = 100;
 			}
-		}
 		return;
 
 	}
