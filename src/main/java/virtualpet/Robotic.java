@@ -98,32 +98,32 @@ public class Robotic extends Pet {
 
 	public void updatePetOilLevelBar() {
 		if (petOilLevel >= 90) {
-			petOilLevelBar = "[••••]";
+			petOilLevelBar = "[****]";
 		}
 		if (petOilLevel >= 66 && petOilLevel <= 89) {
-			petOilLevelBar = "[••• ]";
+			petOilLevelBar = "[*** ]";
 		}
 		if (petOilLevel >= 33 && petOilLevel <= 65) {
-			petOilLevelBar = "[••  ]";
+			petOilLevelBar = "[**  ]";
 		}
 		if (petOilLevel >= 1 && petOilLevel <= 32) {
-			petOilLevelBar = "[•   ]";
+			petOilLevelBar = "[*   ]";
 		}
 
 	}
 
 	public void updatePetServiceLevelBar() {
 		if (petServiceLevel >= 90) {
-			petServiceLevelBar = "[••••]";
+			petServiceLevelBar = "[****]";
 		}
 		if (petServiceLevel >= 66 && petServiceLevel <= 89) {
-			petServiceLevelBar = "[••• ]";
+			petServiceLevelBar = "[*** ]";
 		}
 		if (petServiceLevel >= 33 && petServiceLevel <= 65) {
-			petServiceLevelBar = "[••  ]";
+			petServiceLevelBar = "[**  ]";
 		}
 		if (petServiceLevel >= 1 && petServiceLevel <= 32) {
-			petServiceLevelBar = "[•   ]";
+			petServiceLevelBar = "[*   ]";
 		}
 		if (petServiceLevel == 0) {
 			petServiceLevelBar = "[    ]";
@@ -132,16 +132,16 @@ public class Robotic extends Pet {
 
 	public void updatePetBatteryBar() {
 		if (petBattery >= 90) {
-			petBatteryBar = "[••••]";
+			petBatteryBar = "[****]";
 		}
 		if (petBattery >= 66 && petBattery <= 89) {
-			petBatteryBar = "[••• ]";
+			petBatteryBar = "[*** ]";
 		}
 		if (petBattery >= 33 && petBattery <= 65) {
-			petBatteryBar = "[••  ]";
+			petBatteryBar = "[**  ]";
 		}
 		if (petBattery >= 1 && petBattery <= 32) {
-			petBatteryBar = "[•   ]";
+			petBatteryBar = "[*   ]";
 		}
 		if (petBattery == 0) {
 			petBatteryBar = "[    ]";

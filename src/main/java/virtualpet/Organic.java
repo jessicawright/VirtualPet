@@ -139,32 +139,32 @@ public class Organic extends Pet {
 
 	public void updatePetFullnessBar() {
 		if (petFullness >= 90) {
-			petFullnessBar = "[••••]";
+			petFullnessBar = "[****]";
 		}
 		if (petFullness >= 66 && petFullness <= 89) {
-			petFullnessBar = "[••• ]";
+			petFullnessBar = "[*** ]";
 		}
 		if (petFullness >= 33 && petFullness <= 65) {
-			petFullnessBar = "[••  ]";
+			petFullnessBar = "[**  ]";
 		}
 		if (petFullness >= 1 && petFullness <= 32) {
-			petFullnessBar = "[•   ]";
+			petFullnessBar = "[*   ]";
 		}
 
 	}
 
 	public void updatePetHappinessBar() {
 		if (petHappiness >= 90) {
-			petHappinessBar = "[••••]";
+			petHappinessBar = "[****]";
 		}
 		if (petHappiness >= 66 && petHappiness <= 89) {
-			petHappinessBar = "[••• ]";
+			petHappinessBar = "[*** ]";
 		}
 		if (petHappiness >= 33 && petHappiness <= 65) {
-			petHappinessBar = "[••  ]";
+			petHappinessBar = "[**  ]";
 		}
 		if (petHappiness >= 1 && petHappiness <= 32) {
-			petHappinessBar = "[•   ]";
+			petHappinessBar = "[*   ]";
 		}
 		if (petHappiness == 0) {
 			petHappinessBar = "[    ]";
@@ -173,16 +173,16 @@ public class Organic extends Pet {
 
 	public void updatePetCleanlinessBar() {
 		if (petCleanliness >= 90) {
-			petCleanlinessBar = "[••••]";
+			petCleanlinessBar = "[****]";
 		}
 		if (petCleanliness >= 66 && petCleanliness <= 89) {
-			petCleanlinessBar = "[••• ]";
+			petCleanlinessBar = "[*** ]";
 		}
 		if (petCleanliness >= 33 && petCleanliness <= 65) {
-			petCleanlinessBar = "[••  ]";
+			petCleanlinessBar = "[**  ]";
 		}
 		if (petCleanliness >= 1 && petCleanliness <= 32) {
-			petCleanlinessBar = "[•   ]";
+			petCleanlinessBar = "[*   ]";
 		}
 		if (petCleanliness == 0) {
 			petCleanlinessBar = "[    ]";
@@ -191,16 +191,16 @@ public class Organic extends Pet {
 
 	public void updatePetEnergyBar() {
 		if (petEnergy >= 90) {
-			petEnergyBar = "[••••]";
+			petEnergyBar = "[****]";
 		}
 		if (petEnergy >= 66 && petEnergy <= 89) {
-			petEnergyBar = "[••• ]";
+			petEnergyBar = "[*** ]";
 		}
 		if (petEnergy >= 33 && petEnergy <= 65) {
-			petEnergyBar = "[••  ]";
+			petEnergyBar = "[**  ]";
 		}
 		if (petEnergy >= 1 && petEnergy <= 32) {
-			petEnergyBar = "[•   ]";
+			petEnergyBar = "[*   ]";
 		}
 		if (petEnergy == 0) {
 			petEnergyBar = "[    ]";
