@@ -97,5 +97,13 @@ public class OrganicTest {
 		
 	}
 	
+	@Test
+	public void happinessShouldIncreaseby50() {
+		Organic OrganicTestPet3 = new Organic("spotty", "dog", true, 1, 50, 20, 25, 95);
+		OrganicTestPet3.playPet();
+		int answer = OrganicTestPet3.getPetHappiness();
+		assertEquals(answer, 75);
+	}
+	
 
 }
