@@ -1,6 +1,6 @@
 package virtualpet;
 
-abstract class  Pet {
+abstract class Pet {
 
 	private String petName;
 	private String petType;
@@ -24,7 +24,6 @@ abstract class  Pet {
 	}
 
 	public void incrementStatus() {
-		
 		return;
 
 	}
@@ -50,16 +49,17 @@ abstract class  Pet {
 		return deathValue;
 	}
 
-	public void sendToVet(){
-	   	    return;
-	}
-	public void healthWarning() {
+	public void sendToVet() {
 		return;
 	}
+
+	public void healthWarning() {
+	}
+
 	public void die() {
 		deathValue = -1;
 		return;
-		
+
 	}
-		
+
 }
