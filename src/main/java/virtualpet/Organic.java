@@ -135,6 +135,7 @@ public class Organic extends Pet {
 
 		}
 	}
+	
 
 	public void updatePetFullnessBar() {
 		if (petFullness >= 90) {
@@ -207,8 +208,8 @@ public class Organic extends Pet {
 	}
 
 	public void showPetStatus() {
-		System.out.println("\t" + getPetName() + "'s status - Fullness: " + petFullnessBar + "\t Happiness: "
-				+ petHappinessBar + "\t Cleanliness: " + petCleanlinessBar + "\t Energy: " + petEnergyBar);
+		System.out.println("\t" + getPetName() + "'s status - Fullness: \t" + petFullnessBar + "\t Happiness: \t \t"
+				+ petHappinessBar + "\t Cleanliness: \t" + petCleanlinessBar + "\t Energy: \t" + petEnergyBar);
 
 	}
 

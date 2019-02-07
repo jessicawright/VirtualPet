@@ -150,8 +150,8 @@ public class Robotic extends Pet {
 	}
 
 	public void showPetStatus() {
-		System.out.println("\t" + getPetName() + "'s status - Oil Level: " + petOilLevelBar + "\t Service Status: "
-				+ petServiceLevelBar + "\t Battery: " + petBatteryBar);
+		System.out.println("\t" + getPetName() + "'s status - Oil Level: \t" + petOilLevelBar + "\t Service Status: \t"
+				+ petServiceLevelBar + "\t Battery: \t" + petBatteryBar);
 
 	}
 
