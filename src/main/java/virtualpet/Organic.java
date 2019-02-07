@@ -208,8 +208,7 @@ public class Organic extends Pet {
 	}
 
 	public void showPetStatus() {
-		System.out.println("\t" + getPetName() + "'s status - Fullness: \t" + petFullnessBar + "\t Happiness: \t \t"
-				+ petHappinessBar + "\t Cleanliness: \t" + petCleanlinessBar + "\t Energy: \t" + petEnergyBar);
+		System.out.println("\t" + getPetName() + "'s status - Fullness: \t" + petFullnessBar + "\t Cleanliness: \t \t" + petCleanlinessBar + "\t Energy: \t" + petEnergyBar + "\t Happiness:  \t" + petHappinessBar);
 
 	}
 
