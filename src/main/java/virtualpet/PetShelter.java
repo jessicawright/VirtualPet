@@ -91,8 +91,6 @@ public class PetShelter {
 					System.out.println(((Organic) pet).getPetCleanliness() + " %\tClean");
 					System.out.println(((Organic) pet).getPetEnergy() + " %\tEnergy");
 					System.out.println((((Organic) pet).getPetHappiness()) + " %\tHappier"); // create method
-																								// petStatus?
-					System.out.println(pet.getDeathValue() + "\thas died");
 					System.out.println("-----------------------");
 				} else {
 					if (pet instanceof Robotic) {
@@ -104,7 +102,6 @@ public class PetShelter {
 						System.out.println(((Robotic) pet).getPetOilLevel() + " %\tOil Level");
 						System.out.println(((Robotic) pet).getPetCleanStatus() + " %\tMaintenance level");
 						System.out.println(((Robotic) pet).getPetBattery() + " %\tBattery full");
-						System.out.println(pet.getDeathValue() + "\thas died");
 						System.out.println("-------------------");
 					}
 				}
