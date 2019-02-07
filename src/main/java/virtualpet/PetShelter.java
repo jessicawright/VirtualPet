@@ -29,16 +29,6 @@ public class PetShelter {
 		pets.remove(petToRemove);
 	}
 
-//	public void removeRoboticPet() { 
-//		for (Pet pet : pets.values()) {
-//			if (pet instanceof Robotic) {
-//				if (((Robotic) pet).getDeathValue() != 1) {
-//				pets.remove(pet.getPetName());
-//			}
-//		}
-//		}
-//	}
-//	
 	public void feedAllPets() {
 		for (Pet pet : pets.values()) {
 			if (pet instanceof Organic) {
@@ -46,6 +36,7 @@ public class PetShelter {
 			} else {
 				((Robotic) pet).addOil();
 			}
+
 		}
 	}
 
@@ -56,6 +47,7 @@ public class PetShelter {
 			} else {
 				((Robotic) pet).maintainence();
 			}
+
 		}
 	}
 
@@ -63,9 +55,8 @@ public class PetShelter {
 		for (Pet pet : pets.values()) {
 			if (pet instanceof Organic) {
 				((Organic) pet).playPet();
-			} else {
-				return;
 			}
+
 		}
 	}
 
@@ -76,6 +67,7 @@ public class PetShelter {
 			} else {
 				((Robotic) pet).chargeBattery();
 			}
+
 		}
 
 	}
@@ -90,26 +82,30 @@ public class PetShelter {
 		for (Pet pet : pets.values()) {
 			if (pet.getPetAlive()) {
 				if (pet instanceof Organic) {
-					System.out.println("Pet Status:");
-					System.out.println("For pet " + pet.getPetName());
+					System.out.println("**__Pet Status__**");
+					System.out.println();
+					System.out.println(pet.getPetName().toUpperCase() + " Current Status is:");
+					System.out.println();
 					pet.healthWarning();
-					System.out.println("Fullness = " + (((Organic) pet).getPetFullness()));
-					System.out.println("Cleanliness = " + ((Organic) pet).getPetCleanliness());
-					System.out.println("Energy = " + ((Organic) pet).getPetEnergy());
-					System.out.println("Happiness = " + (((Organic) pet).getPetHappiness())); // create method
+					System.out.println((((Organic) pet).getPetFullness()) + " %\tFull");
+					System.out.println(((Organic) pet).getPetCleanliness() + " %\tClean");
+					System.out.println(((Organic) pet).getPetEnergy() + " %\tEnergy");
+					System.out.println((((Organic) pet).getPetHappiness()) + " %\tHappier"); // create method
 																								// petStatus?
-					System.out.println(pet.getDeathValue());
-					System.out.println("----------");
+					System.out.println(pet.getDeathValue() + "\thas died");
+					System.out.println("-----------------------");
 				} else {
 					if (pet instanceof Robotic) {
-						System.out.println("Pet Status:");
-						System.out.println("For pet " + ((Robotic) pet).getPetName());
+						System.out.println("**__Current Pet Status__**");
+						System.out.println();
+						System.out.println(((Robotic) pet).getPetName().toUpperCase() + " Current Status is:");
+						System.out.println();
 						pet.healthWarning();
-						System.out.println("Oil Level = " + ((Robotic) pet).getPetOilLevel());
-						System.out.println("Clean Status = " + ((Robotic) pet).getPetCleanStatus());
-						System.out.println("Charge Level = " + ((Robotic) pet).getPetBattery());
-						System.out.println(pet.getDeathValue());
-						System.out.println("----------");
+						System.out.println(((Robotic) pet).getPetOilLevel() + " %\tOil Level");
+						System.out.println(((Robotic) pet).getPetCleanStatus() + " %\tMaintenance level");
+						System.out.println(((Robotic) pet).getPetBattery() + " %\tBattery full");
+						System.out.println(pet.getDeathValue() + "\thas died");
+						System.out.println("-------------------");
 					}
 				}
 			}
@@ -124,10 +120,15 @@ public class PetShelter {
 //				System.out.println(pet.getPetName());
 //			} else {
 //				if (pet instanceof Robotic) {
-					System.out.println(pet.getPetName());
-				}
-				return;
-			}
+			System.out.println(pet.getPetName());
+		}
+		return;
+	}
+
+	public void adoptPetOut(String petName) {
+		pets.remove(petName);
+		System.out.println(petName + " found a new home.");
+	}
 
 //		}
 //	}
