@@ -20,12 +20,12 @@ public class Application {
 		virtualPetShelter.addPet(pet3);
 
 		s("***************************************");
-		s(" Welcome! to The Thr33 Pets Shelter\n Our Shelter Currently Holds " + virtualPetShelter.getPetsLength()
+		s("  Welcome to The Thr33 Pets Shelter!\n  Our Shelter Currently Holds " + virtualPetShelter.getPetsLength()
 				+ " Pets");
 		s("***************************************");
 //		Pet virtualPet = createPet(userInput);
 
-		s(" Enter 1 to Start The Game");
+		s("      Enter 1 to Start The Game");
 		s("***************************************");
 		int userMenuChoice = userInput.nextInt();
 		userInput.nextLine();
