@@ -53,8 +53,8 @@ public class Application {
 			case 1:
 				virtualPetShelter.feedAllPets();
 				virtualPetShelter.incrementAllPets();
-				System.out.println("Yum yum yum!");
-				System.out.println("");
+				s("Yum yum yum!");
+				s("");
 				break;
 			case 2:
 				virtualPetShelter.playAllPets();
@@ -75,7 +75,7 @@ public class Application {
 				s(userPetName + " is such a cute name");
 
 				// test user chosen pet type from list
-				s("Please choose a pet type");
+				s("Please type your choice pet type");
 				s("DOG, CAT, RABBIT");
 				String userPetType = userInput.nextLine().toLowerCase().trim();
 				// trim() method eliminates leading and trailing spaces

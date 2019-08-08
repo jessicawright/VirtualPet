@@ -14,6 +14,7 @@ public class Organic extends Pet {
 	public Organic(String petName, String petType, boolean petAlive, int deathValue, int petFullness,
 			int petCleanliness, int petHappiness, int petEnergy) {
 
+		//The super keyword refers to superclass (parent) objects. 
 		super(petName, petType, petAlive, deathValue);
 
 		this.petFullness = petFullness;
